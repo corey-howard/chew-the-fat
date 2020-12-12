@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chew The Fat</title>
-</head>
-<body>
+{% extends "base.html" %} 
+{% block content %}
+
     {% for slang in words %}
         {{ slang.slang_term }}<br>
         {{ slang.definition }}<br>
         {{ slang.created_by }}<br>
         {{ slang.date_created }}<br>
     {% endfor %}
-</body>
-</html>
+
+{% endblock %}
