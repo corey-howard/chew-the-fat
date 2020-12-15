@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row">
+    <!--Registration Form-->
+    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
+        <div class="card-panel blue-grey darken-1">
+            <!--Username-->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-user prefix white-text"></i>
+                    <input id="username" name="username" type="text" class="validate white-text"
+                            minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
+                    <label for="username" class="white-text">Username</label>
+                </div>
+            </div>
+            <!--Password-->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-user-lock prefix white-text"></i>
+                    <input id="password" name="password" type="password" class="validate white-text" 
+                            minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
+                    <label for="password" class="white-text">Password</label>
+                </div>
+            </div>
+            <div class="row">
+                <button type="submit" class="col s12 btn-large register-button">
+                    Register <i class="fas fa-check-circle"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

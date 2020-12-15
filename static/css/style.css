@@ -1,0 +1,14 @@
+.register-button {
+    background-color: white;
+    color:#546e7a;
+    font-weight: bold;
+}
+
+.btn-large:hover {
+    background-color: rgb(197, 194, 194);
+}
+
+.flash-message h4 {
+    line-height: 2;
+    color: #546e7a;
+}
