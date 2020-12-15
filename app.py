@@ -46,8 +46,43 @@ def register():
         # Places new user into session cookie
         session["user"] = request.form.get("username").lower()
         flash("Lovely jubley. Registration Successful")
+        return redirect(url_for("profile", username=session["user"]))
     return render_template("register.html")
 
+
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        # Checks db to see if user already in use
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            # Checks if hashed password matches user password
+            if check_password_hash(
+                existing_user["password"], request.form.get("password")):
+                    session["user"] = request.form.get("username").lower()
+                    flash("{}, alright guv'nor?".format(
+                        request.form.get("username")))
+                    return redirect(url_for(
+                        "profile", username=session["user"]))
+            else:
+                # Password incorrect
+                flash("It's all gone Pete Tong, Username/Password is wrong")
+                return redirect(url_for("login"))
+
+        else:
+            # If the Username doesn't exist
+            flash("It's all gone Pete Tong, Username/Password is wrong")
+            return redirect(url_for("login"))
+
+    return render_template("login.html")
+
+
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
+    username  = mongo.db.users.find_one({"username": session["user"]})["username"]
+    return render_template("profile.html", username=username)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

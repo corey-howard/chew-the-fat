@@ -1,4 +1,16 @@
+.home-button {
+    background-color: white;
+    color:#546e7a;
+    font-weight: bold;
+}
+
 .register-button {
+    background-color: white;
+    color:#546e7a;
+    font-weight: bold;
+}
+
+.login-button {
     background-color: white;
     color:#546e7a;
     font-weight: bold;
