@@ -20,7 +20,8 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_words")
 def get_words():
-    words = mongo.db.words.find()
+    # Sorts words alphabetically from database
+    words = mongo.db.words.find().sort("slang_term")
     return render_template("words.html", words=words)
 
 
@@ -81,8 +82,27 @@ def login():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    username  = mongo.db.users.find_one({"username": session["user"]})["username"]
-    return render_template("profile.html", username=username)
+    username  = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
+    if session["user"]:
+        return render_template("profile.html", username=username)
+
+    return redirect(url_for("login"))
+
+
+@app.route("/logout")
+def logout():
+    # removes user from session cookies once logged out
+    flash("Ta ta for now. You have logged out.")
+    session.pop("user")
+    return redirect(url_for("login"))
+
+
+@app.route("/add_slang")
+def add_slang():
+    return render_template("add_slang.html")
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

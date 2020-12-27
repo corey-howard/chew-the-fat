@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>Add Slang</h3>
+
+<div class="row">
+    <form class="col s12" method="POST" action="">
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="slang" type="text" class="validate">
+                <label for="slang">Slang</label>
+            </div>
+            <div class="input-field col s12">
+                <input id="slang_definition" type="text" class="validate">
+                <label for="slang_definition">Slang Definition</label>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
