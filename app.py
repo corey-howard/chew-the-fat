@@ -99,8 +99,17 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/add_slang")
+@app.route("/add_slang", methods=["GET", "POST"])
 def add_slang():
+    if request.method == "POST":
+        words = {
+            "slang_term": request.form.get("slang_term"),
+            "slang_definition": request.form.get("slang_description"),
+            "created_by": session["user"]
+        }
+        mongo.db.words.insert_one(words)
+        flash("Slang added, cheers me ol' mucker")
+        return redirect(url_for("get_words"))
     return render_template("add_slang.html")
 
 

@@ -11,7 +11,7 @@
     </div>
 </div>
 <div class="row alphabet">
-    <div class="col s12 m8 offset-m2">
+    <div class="col s12">
         <div class="card blue-grey darken-1">
             <div class="card-content white-text center-align section table-of contents">
                 <a href="#a" class="white-text">A </a>
@@ -26,7 +26,7 @@
                 <a href="" class="white-text">J </a>
                 <a href="" class="white-text">K </a>
                 <a href="" class="white-text">L </a>
-                <a href="" class="white-text">M </a><br>
+                <a href="" class="white-text">M </a>
                 <a href="" class="white-text">N </a>
                 <a href="" class="white-text">O </a>
                 <a href="" class="white-text">P </a>
@@ -46,15 +46,18 @@
 </div>
 
     <div id="a" class="section scrollspy">
-        <h3>A</h3>
+        <h3 class="white-text">A</h3>
     </div>
 
     {% for slang in words %}
     <ul class="collapsible">
         <li>
-            <div class="collapsible-header"><i class="fas fa-caret-down"></i><strong>{{ slang.slang_term }}</strong> 
-                <i class="fas fa-long-arrow-alt-right"></i> {{ slang.definition }}</div>
-            <div class="collapsible-body"><span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span></div>
+            <div class="collapsible-header blue-grey darken-1 white-text"><i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
+                <i class="fas fa-long-arrow-alt-right"></i> <em>{{ slang.slang_definition }}</em>
+            </div>
+            <div class="collapsible-body white">
+                <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
+            </div>
         </li>
     </ul>
 
