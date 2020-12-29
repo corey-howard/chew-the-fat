@@ -21,7 +21,7 @@ mongo = PyMongo(app)
 @app.route("/get_words")
 def get_words():
     # Sorts words alphabetically from database
-    words = mongo.db.words.find().sort("slang_term")
+    words = list(mongo.db.words.find().sort("slang_term"))
     return render_template("words.html", words=words)
 
 

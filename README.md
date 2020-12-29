@@ -13,3 +13,7 @@ https://docs.python.org/3/library/hashlib.html
 To learn how to sort data alphabetically
 
 https://www.w3schools.com/python/python_mongodb_sort.asp
+
+Bug fixes
+
+When user added slang term and definition to the site/database, upon page reloading, the slang term had been created successfully but the definition was showing as 'None'. Upon investigation, there were no errors but there was a mistake in the app.py file under the app.route declaration. Instead of request.form.get("slang_definition) I had written, request.form.get("slang_description"). Was difficult to spot but I discovered it eventually.
