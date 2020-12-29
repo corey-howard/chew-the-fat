@@ -104,7 +104,7 @@ def add_slang():
     if request.method == "POST":
         words = {
             "slang_term": request.form.get("slang_term"),
-            "slang_definition": request.form.get("slang_description"),
+            "slang_definition": request.form.get("slang_definition"),
             "created_by": session["user"]
         }
         mongo.db.words.insert_one(words)
