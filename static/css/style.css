@@ -26,7 +26,19 @@
     font-weight: bold;
 }
 
+.edit-button {
+    background-color: white;
+    color:#546e7a;
+    font-weight: bold;
+    margin-left: auto;
+}
+
+
 .btn-large:hover {
+    background-color: rgb(197, 194, 194);
+}
+
+.btn-small:hover {
     background-color: rgb(197, 194, 194);
 }
 
@@ -37,4 +49,8 @@
 
 .alphabet a {
     font-size: xx-large;
+}
+
+.arrow {
+    vertical-align: middle;
 }

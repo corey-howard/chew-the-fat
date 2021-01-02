@@ -16,30 +16,30 @@
             <div class="card-content white-text center-align section table-of contents">
                 <a href="#a" class="white-text">A </a>
                 <a href="#b" class="white-text">B </a>
-                <a href="" class="white-text">C </a>
-                <a href="" class="white-text">D </a>
-                <a href="" class="white-text">E </a>
-                <a href="" class="white-text">F </a>
-                <a href="" class="white-text">G </a>
-                <a href="" class="white-text">H </a>
-                <a href="" class="white-text">I </a>
-                <a href="" class="white-text">J </a>
-                <a href="" class="white-text">K </a>
-                <a href="" class="white-text">L </a>
-                <a href="" class="white-text">M </a>
-                <a href="" class="white-text">N </a>
-                <a href="" class="white-text">O </a>
-                <a href="" class="white-text">P </a>
-                <a href="" class="white-text">Q </a>
-                <a href="" class="white-text">R </a>
-                <a href="" class="white-text">S </a>
-                <a href="" class="white-text">T </a>
-                <a href="" class="white-text">U </a>
-                <a href="" class="white-text">V </a>
-                <a href="" class="white-text">W </a>
-                <a href="" class="white-text">X </a>
-                <a href="" class="white-text">Y </a>
-                <a href="" class="white-text">Z </a>
+                <a href="#c" class="white-text">C </a>
+                <a href="#d" class="white-text">D </a>
+                <a href="#e" class="white-text">E </a>
+                <a href="#f" class="white-text">F </a>
+                <a href="#g" class="white-text">G </a>
+                <a href="#h" class="white-text">H </a>
+                <a href="#i" class="white-text">I </a>
+                <a href="#j" class="white-text">J </a>
+                <a href="#k" class="white-text">K </a>
+                <a href="#l" class="white-text">L </a>
+                <a href="#m" class="white-text">M </a>
+                <a href="#n" class="white-text">N </a>
+                <a href="#o" class="white-text">O </a>
+                <a href="#p" class="white-text">P </a>
+                <a href="#q" class="white-text">Q </a>
+                <a href="#r" class="white-text">R </a>
+                <a href="#s" class="white-text">S </a>
+                <a href="#t" class="white-text">T </a>
+                <a href="#u" class="white-text">U </a>
+                <a href="#v" class="white-text">V </a>
+                <a href="#w" class="white-text">W </a>
+                <a href="#x" class="white-text">X </a>
+                <a href="#y" class="white-text">Y </a>
+                <a href="#z" class="white-text">Z </a>
             </div>
         </div>
     </div>
@@ -53,8 +53,15 @@
         {% if slang.slang_term[0] == "A" %}
             <ul class="collapsible">
                 <li>
-                    <div class="collapsible-header blue-grey darken-1           white-text"><i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
-                        <i class="fas fa-long-arrow-alt-right"></i> <em>{{ slang.slang_definition }}</em>
+                    <div class=" row collapsible-header blue-grey darken-1           white-text col s12">
+                        <div class="col s10">
+                            <i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
+                            <i class="arrow fas fa-long-arrow-alt-right"></i> <em>{{ slang.slang_definition }}</em>
+                        </div>
+                        <div class="col s2">
+                            <a href="{{ url_for('edit_slang', slang_id=slang._id)}}" class=" btn-small edit-button">
+                                Edit</a>
+                        </div>
                     </div>
                     <div class="collapsible-body white">
                         <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
@@ -70,6 +77,462 @@
 
     {% for slang in words %}
         {% if slang.slang_term[0] == "B" %}
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header blue-grey darken-1 white-text"><i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
+                        <i class="fas fa-long-arrow-alt-right"></i> <em>{{ slang.definition }}</em>
+                    </div>
+                    <div class="collapsible-body white">
+                        <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
+                    </div>
+                </li>
+            </ul>
+        {% endif %}
+    {% endfor %}
+
+        <div id="c" class="section scrollspy white-text">
+        <h3>C</h3>
+    </div>
+
+    {% for slang in words %}
+        {% if slang.slang_term[0] == "C" %}
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header blue-grey darken-1 white-text"><i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
+                        <i class="fas fa-long-arrow-alt-right"></i> <em>{{ slang.definition }}</em>
+                    </div>
+                    <div class="collapsible-body white">
+                        <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
+                    </div>
+                </li>
+            </ul>
+        {% endif %}
+    {% endfor %}
+
+        <div id="d" class="section scrollspy white-text">
+        <h3>D</h3>
+    </div>
+
+    {% for slang in words %}
+        {% if slang.slang_term[0] == "D" %}
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header blue-grey darken-1 white-text"><i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
+                        <i class="fas fa-long-arrow-alt-right"></i> <em>{{ slang.definition }}</em>
+                    </div>
+                    <div class="collapsible-body white">
+                        <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
+                    </div>
+                </li>
+            </ul>
+        {% endif %}
+    {% endfor %}
+
+        <div id="e" class="section scrollspy white-text">
+        <h3>E</h3>
+    </div>
+
+    {% for slang in words %}
+        {% if slang.slang_term[0] == "E" %}
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header blue-grey darken-1 white-text"><i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
+                        <i class="fas fa-long-arrow-alt-right"></i> <em>{{ slang.definition }}</em>
+                    </div>
+                    <div class="collapsible-body white">
+                        <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
+                    </div>
+                </li>
+            </ul>
+        {% endif %}
+    {% endfor %}
+
+        <div id="f" class="section scrollspy white-text">
+        <h3>F</h3>
+    </div>
+
+    {% for slang in words %}
+        {% if slang.slang_term[0] == "F" %}
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header blue-grey darken-1 white-text"><i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
+                        <i class="fas fa-long-arrow-alt-right"></i> <em>{{ slang.definition }}</em>
+                    </div>
+                    <div class="collapsible-body white">
+                        <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
+                    </div>
+                </li>
+            </ul>
+        {% endif %}
+    {% endfor %}
+
+        <div id="g" class="section scrollspy white-text">
+        <h3>G</h3>
+    </div>
+
+    {% for slang in words %}
+        {% if slang.slang_term[0] == "G" %}
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header blue-grey darken-1 white-text"><i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
+                        <i class="fas fa-long-arrow-alt-right"></i> <em>{{ slang.definition }}</em>
+                    </div>
+                    <div class="collapsible-body white">
+                        <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
+                    </div>
+                </li>
+            </ul>
+        {% endif %}
+    {% endfor %}
+
+        <div id="h" class="section scrollspy white-text">
+        <h3>H</h3>
+    </div>
+
+    {% for slang in words %}
+        {% if slang.slang_term[0] == "H" %}
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header blue-grey darken-1 white-text"><i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
+                        <i class="fas fa-long-arrow-alt-right"></i> <em>{{ slang.definition }}</em>
+                    </div>
+                    <div class="collapsible-body white">
+                        <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
+                    </div>
+                </li>
+            </ul>
+        {% endif %}
+    {% endfor %}
+
+        <div id="i" class="section scrollspy white-text">
+        <h3>I</h3>
+    </div>
+
+    {% for slang in words %}
+        {% if slang.slang_term[0] == "I" %}
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header blue-grey darken-1 white-text"><i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
+                        <i class="fas fa-long-arrow-alt-right"></i> <em>{{ slang.definition }}</em>
+                    </div>
+                    <div class="collapsible-body white">
+                        <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
+                    </div>
+                </li>
+            </ul>
+        {% endif %}
+    {% endfor %}
+
+        <div id="j" class="section scrollspy white-text">
+        <h3>J</h3>
+    </div>
+
+    {% for slang in words %}
+        {% if slang.slang_term[0] == "J" %}
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header blue-grey darken-1 white-text"><i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
+                        <i class="fas fa-long-arrow-alt-right"></i> <em>{{ slang.definition }}</em>
+                    </div>
+                    <div class="collapsible-body white">
+                        <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
+                    </div>
+                </li>
+            </ul>
+        {% endif %}
+    {% endfor %}
+
+        <div id="k" class="section scrollspy white-text">
+        <h3>K</h3>
+    </div>
+
+    {% for slang in words %}
+        {% if slang.slang_term[0] == "K" %}
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header blue-grey darken-1 white-text"><i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
+                        <i class="fas fa-long-arrow-alt-right"></i> <em>{{ slang.definition }}</em>
+                    </div>
+                    <div class="collapsible-body white">
+                        <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
+                    </div>
+                </li>
+            </ul>
+        {% endif %}
+    {% endfor %}
+
+        <div id="l" class="section scrollspy white-text">
+        <h3>L</h3>
+    </div>
+
+    {% for slang in words %}
+        {% if slang.slang_term[0] == "L" %}
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header blue-grey darken-1 white-text"><i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
+                        <i class="fas fa-long-arrow-alt-right"></i> <em>{{ slang.definition }}</em>
+                    </div>
+                    <div class="collapsible-body white">
+                        <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
+                    </div>
+                </li>
+            </ul>
+        {% endif %}
+    {% endfor %}
+
+        <div id="m" class="section scrollspy white-text">
+        <h3>M</h3>
+    </div>
+
+    {% for slang in words %}
+        {% if slang.slang_term[0] == "M" %}
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header blue-grey darken-1 white-text"><i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
+                        <i class="fas fa-long-arrow-alt-right"></i> <em>{{ slang.definition }}</em>
+                    </div>
+                    <div class="collapsible-body white">
+                        <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
+                    </div>
+                </li>
+            </ul>
+        {% endif %}
+    {% endfor %}
+
+        <div id="n" class="section scrollspy white-text">
+        <h3>N</h3>
+    </div>
+
+    {% for slang in words %}
+        {% if slang.slang_term[0] == "N" %}
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header blue-grey darken-1 white-text"><i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
+                        <i class="fas fa-long-arrow-alt-right"></i> <em>{{ slang.definition }}</em>
+                    </div>
+                    <div class="collapsible-body white">
+                        <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
+                    </div>
+                </li>
+            </ul>
+        {% endif %}
+    {% endfor %}
+
+        <div id="o" class="section scrollspy white-text">
+        <h3>O</h3>
+    </div>
+
+    {% for slang in words %}
+        {% if slang.slang_term[0] == "O" %}
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header blue-grey darken-1 white-text"><i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
+                        <i class="fas fa-long-arrow-alt-right"></i> <em>{{ slang.definition }}</em>
+                    </div>
+                    <div class="collapsible-body white">
+                        <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
+                    </div>
+                </li>
+            </ul>
+        {% endif %}
+    {% endfor %}
+
+        <div id="p" class="section scrollspy white-text">
+        <h3>P</h3>
+    </div>
+
+    {% for slang in words %}
+        {% if slang.slang_term[0] == "P" %}
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header blue-grey darken-1 white-text"><i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
+                        <i class="fas fa-long-arrow-alt-right"></i> <em>{{ slang.definition }}</em>
+                    </div>
+                    <div class="collapsible-body white">
+                        <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
+                    </div>
+                </li>
+            </ul>
+        {% endif %}
+    {% endfor %}
+
+        <div id="q" class="section scrollspy white-text">
+        <h3>Q</h3>
+    </div>
+
+    {% for slang in words %}
+        {% if slang.slang_term[0] == "Q" %}
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header blue-grey darken-1 white-text"><i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
+                        <i class="fas fa-long-arrow-alt-right"></i> <em>{{ slang.definition }}</em>
+                    </div>
+                    <div class="collapsible-body white">
+                        <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
+                    </div>
+                </li>
+            </ul>
+        {% endif %}
+    {% endfor %}
+
+        <div id="r" class="section scrollspy white-text">
+        <h3>R</h3>
+    </div>
+
+    {% for slang in words %}
+        {% if slang.slang_term[0] == "R" %}
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header blue-grey darken-1 white-text"><i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
+                        <i class="fas fa-long-arrow-alt-right"></i> <em>{{ slang.definition }}</em>
+                    </div>
+                    <div class="collapsible-body white">
+                        <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
+                    </div>
+                </li>
+            </ul>
+        {% endif %}
+    {% endfor %}
+
+        <div id="s" class="section scrollspy white-text">
+        <h3>S</h3>
+    </div>
+
+    {% for slang in words %}
+        {% if slang.slang_term[0] == "S" %}
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header blue-grey darken-1 white-text"><i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
+                        <i class="fas fa-long-arrow-alt-right"></i> <em>{{ slang.definition }}</em>
+                    </div>
+                    <div class="collapsible-body white">
+                        <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
+                    </div>
+                </li>
+            </ul>
+        {% endif %}
+    {% endfor %}
+
+        <div id="t" class="section scrollspy white-text">
+        <h3>T</h3>
+    </div>
+
+    {% for slang in words %}
+        {% if slang.slang_term[0] == "T" %}
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header blue-grey darken-1 white-text"><i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
+                        <i class="fas fa-long-arrow-alt-right"></i> <em>{{ slang.definition }}</em>
+                    </div>
+                    <div class="collapsible-body white">
+                        <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
+                    </div>
+                </li>
+            </ul>
+        {% endif %}
+    {% endfor %}
+
+        <div id="u" class="section scrollspy white-text">
+        <h3>U</h3>
+    </div>
+
+    {% for slang in words %}
+        {% if slang.slang_term[0] == "U" %}
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header blue-grey darken-1 white-text"><i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
+                        <i class="fas fa-long-arrow-alt-right"></i> <em>{{ slang.definition }}</em>
+                    </div>
+                    <div class="collapsible-body white">
+                        <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
+                    </div>
+                </li>
+            </ul>
+        {% endif %}
+    {% endfor %}
+
+        <div id="v" class="section scrollspy white-text">
+        <h3>V</h3>
+    </div>
+
+    {% for slang in words %}
+        {% if slang.slang_term[0] == "V" %}
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header blue-grey darken-1 white-text"><i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
+                        <i class="fas fa-long-arrow-alt-right"></i> <em>{{ slang.definition }}</em>
+                    </div>
+                    <div class="collapsible-body white">
+                        <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
+                    </div>
+                </li>
+            </ul>
+        {% endif %}
+    {% endfor %}
+
+        <div id="w" class="section scrollspy white-text">
+        <h3>W</h3>
+    </div>
+
+    {% for slang in words %}
+        {% if slang.slang_term[0] == "W" %}
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header blue-grey darken-1 white-text"><i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
+                        <i class="fas fa-long-arrow-alt-right"></i> <em>{{ slang.definition }}</em>
+                    </div>
+                    <div class="collapsible-body white">
+                        <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
+                    </div>
+                </li>
+            </ul>
+        {% endif %}
+    {% endfor %}
+
+        <div id="x" class="section scrollspy white-text">
+        <h3>X</h3>
+    </div>
+
+    {% for slang in words %}
+        {% if slang.slang_term[0] == "X" %}
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header blue-grey darken-1 white-text"><i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
+                        <i class="fas fa-long-arrow-alt-right"></i> <em>{{ slang.definition }}</em>
+                    </div>
+                    <div class="collapsible-body white">
+                        <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
+                    </div>
+                </li>
+            </ul>
+        {% endif %}
+    {% endfor %}
+
+        <div id="y" class="section scrollspy white-text">
+        <h3>Y</h3>
+    </div>
+
+    {% for slang in words %}
+        {% if slang.slang_term[0] == "Y" %}
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header blue-grey darken-1 white-text"><i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
+                        <i class="fas fa-long-arrow-alt-right"></i> <em>{{ slang.definition }}</em>
+                    </div>
+                    <div class="collapsible-body white">
+                        <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
+                    </div>
+                </li>
+            </ul>
+        {% endif %}
+    {% endfor %}
+
+        <div id="z" class="section scrollspy white-text">
+        <h3>Z</h3>
+    </div>
+
+    {% for slang in words %}
+        {% if slang.slang_term[0] == "Z" %}
             <ul class="collapsible">
                 <li>
                     <div class="collapsible-header blue-grey darken-1 white-text"><i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 

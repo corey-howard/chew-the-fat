@@ -113,6 +113,13 @@ def add_slang():
     return render_template("add_slang.html")
 
 
+@app.route("/edit_slang/<slang_id>", methods=["GET", "POST"])
+def edit_slang(slang_id):
+    slang = mongo.db.words.find_one({"_id": ObjectId(slang_id)})
+
+    return render_template("edit_slang.html", slang=slang)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
