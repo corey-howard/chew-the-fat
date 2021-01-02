@@ -1,4 +1,5 @@
 import os
+import datetime
 from flask import (
     Flask, flash, render_template, redirect, request, session, url_for)
 from flask_pymongo import PyMongo
@@ -107,6 +108,8 @@ def add_slang():
             "slang_definition": request.form.get("slang_definition"),
             "created_by": session["user"]
         }
+        x = datetime.datetime.now()
+        print(x)
         mongo.db.words.insert_one(words)
         flash("Slang added, cheers me ol' mucker")
         return redirect(url_for("get_words"))
@@ -115,9 +118,24 @@ def add_slang():
 
 @app.route("/edit_slang/<slang_id>", methods=["GET", "POST"])
 def edit_slang(slang_id):
-    slang = mongo.db.words.find_one({"_id": ObjectId(slang_id)})
+    if request.method == "POST":
+        words = {
+            "slang_term": request.form.get("slang_term"),
+            "slang_definition": request.form.get("slang_definition"),
+            "created_by": session["user"]
+        }
+        mongo.db.words.update({"_id": ObjectId(slang_id)}, words)
+        flash("Slang updated, cheers me ol' mucker")
 
+    slang = mongo.db.words.find_one({"_id": ObjectId(slang_id)})
     return render_template("edit_slang.html", slang=slang)
+
+
+@app.route("/delete_slang/<slang_id>")
+def delete_slang(slang_id):
+    mongo.db.words.remove({"_id": ObjectId(slang_id)})
+    flash("Done and dusted, slang deleted.")
+    return redirect(url_for("get_words"))
 
 
 if __name__ == "__main__":

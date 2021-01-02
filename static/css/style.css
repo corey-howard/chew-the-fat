@@ -33,6 +33,13 @@
     margin-left: auto;
 }
 
+.delete-button {
+    background-color: white;
+    color:#546e7a;
+    font-weight: bold;
+    margin-left: auto;
+}
+
 
 .btn-large:hover {
     background-color: rgb(197, 194, 194);
