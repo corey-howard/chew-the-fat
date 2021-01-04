@@ -106,10 +106,9 @@ def add_slang():
         words = {
             "slang_term": request.form.get("slang_term"),
             "slang_definition": request.form.get("slang_definition"),
-            "created_by": session["user"]
+            "created_by": session["user"],
+            "date_created": datetime.datetime.today().strftime('%d-%m-%y')
         }
-        x = datetime.datetime.now()
-        print(x)
         mongo.db.words.insert_one(words)
         flash("Slang added, cheers me ol' mucker")
         return redirect(url_for("get_words"))
