@@ -107,6 +107,7 @@ def add_slang():
             "slang_term": request.form.get("slang_term"),
             "slang_definition": request.form.get("slang_definition"),
             "created_by": session["user"],
+            # Inserts current date when slang is created
             "date_created": datetime.datetime.today().strftime('%d-%m-%y')
         }
         mongo.db.words.insert_one(words)
