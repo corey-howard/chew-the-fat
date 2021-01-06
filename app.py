@@ -17,13 +17,21 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+"""
+Pulls slang from the words collection in database
+"""
 
-@app.route("/")
+
 @app.route("/get_words")
 def get_words():
-    # Sorts words alphabetically from database
+    # Sorts slang alphabetically
     words = list(mongo.db.words.find().sort("slang_term"))
     return render_template("words.html", words=words)
+
+
+"""
+Creates user and adds to database under user collection
+"""
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -33,12 +41,11 @@ def register():
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
-
         if existing_user:
             flash(
                 "Oops! Must be a Cadbury Flake. That Username already exists")
             return redirect(url_for("register"))
-
+        # Generates a hashed password for security and stores in database
         register = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password"))
@@ -52,6 +59,12 @@ def register():
     return render_template("register.html")
 
 
+"""
+Allows users to log in to site, captures incorrect
+username/password, if credentials match, logs user in.
+"""
+
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -59,37 +72,47 @@ def login():
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
-        if existing_user:
-            # Checks if hashed password matches user password
-            if check_password_hash(
+    if existing_user:
+        # Checks if hashed password matches user password
+        if check_password_hash(
                 existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("{}, alright guv'nor?".format(
-                        request.form.get("username")))
-                    return redirect(url_for(
-                        "profile", username=session["user"]))
-            else:
-                # Password incorrect
-                flash("It's all gone Pete Tong, Username/Password is wrong")
-                return redirect(url_for("login"))
-
+            session["user"] = request.form.get("username").lower()
+            flash("{}, alright guv'nor?".format(
+                request.form.get("username")))
+            return redirect(url_for(
+                "profile", username=session["user"]))
         else:
-            # If the Username doesn't exist
+            # Password incorrect
             flash("It's all gone Pete Tong, Username/Password is wrong")
             return redirect(url_for("login"))
+
+    else:
+        # If the Username doesn't exist
+        flash("It's all gone Pete Tong, Username/Password is wrong")
+        return redirect(url_for("login"))
 
     return render_template("login.html")
 
 
+"""
+User profile page, checks what user is logged in via session user.
+"""
+
+
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    username  = mongo.db.users.find_one(
+    username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-
+    # If user log on credentials correct allows access to their profile page
     if session["user"]:
         return render_template("profile.html", username=username)
 
     return redirect(url_for("login"))
+
+
+"""
+Logs user out of their account, returns to login page
+"""
 
 
 @app.route("/logout")
@@ -98,6 +121,11 @@ def logout():
     flash("Ta ta for now. You have logged out.")
     session.pop("user")
     return redirect(url_for("login"))
+
+
+"""
+For users to create slang term and definition, adds to the database.
+"""
 
 
 @app.route("/add_slang", methods=["GET", "POST"])
@@ -116,6 +144,11 @@ def add_slang():
     return render_template("add_slang.html")
 
 
+"""
+Allows users to edit only the slang entries they have created.
+"""
+
+
 @app.route("/edit_slang/<slang_id>", methods=["GET", "POST"])
 def edit_slang(slang_id):
     if request.method == "POST":
@@ -129,6 +162,11 @@ def edit_slang(slang_id):
 
     slang = mongo.db.words.find_one({"_id": ObjectId(slang_id)})
     return render_template("edit_slang.html", slang=slang)
+
+
+"""
+Allows users to delete only the slang entries they have created.
+"""
 
 
 @app.route("/delete_slang/<slang_id>")

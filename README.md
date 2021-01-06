@@ -34,6 +34,10 @@ Selecting first letter in database items
 
 https://stackoverflow.com/questions/44974291/ansible-loop-over-range-of-letters-in-template
 
+PEP 8 compliance
+
+https://www.python.org/dev/peps/pep-0008/
+
 IMAGES
 
 Brick wall background
