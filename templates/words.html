@@ -1,8 +1,9 @@
 {% extends "base.html" %} 
 {% block content %}
+<br>
 <!--Heading-->
 <div class="row">
-    <div class="col s12 m8 offset-m2">
+    <div class="col s12">
         <div class="card blue-grey darken-1">
             <div class="card-content white-text">
                 <h5 class="center-align">The Cockney Rhyming Slang Dictionary</h5>
@@ -48,9 +49,9 @@
 
 <!--Slang Dictionary-->
 
-    <div id="a" class="section scrollspy">
-        <h3 class="white-text">A</h3>
-    </div>
+<div id="a" class="section scrollspy">
+    <h3 class="white-text">A</h3>
+</div>
     <!--Searches database for slang in collection called words-->
     {% for slang in words %}
         <!--Only collects data where first letter is equivalent to 'A'-->
@@ -58,11 +59,14 @@
             <ul class="collapsible">
                 <li>
                     <div class=" row collapsible-header blue-grey darken-1           white-text col s12">
-                        <div class="col s10">
+                        <div class="col s10 font-size">
                             <i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
-                            <i class="arrow fas fa-long-arrow-alt-right"></i> <em>{{ slang.slang_definition }}</em>
+                            <i class="arrow fas fa-long-arrow-alt-right" id="hide-arrow-a"></i> <em id="hide-definition-a">{{ slang.slang_definition }}</em>
+                            <div class="hide-arrow-definition">
+                                <i class="arrow fas fa-long-arrow-alt-right" ></i> <em >{{ slang.slang_definition }}</em>
+                            </div>
                         </div>
-                        <div class="col s2">
+                        <div class="col s3 center-align">
                             <!--Adds name of logged in user who created slang-->
                             {% if session.user|lower == slang.created_by|lower %}
                             <a href="{{ url_for('edit_slang', slang_id=slang._id)}}" class=" btn-small edit-button">
@@ -79,26 +83,32 @@
         {% endif %}
     {% endfor %}
 
-    <div id="b" class="section scrollspy white-text">
-        <h3>B</h3>
-    </div>
-
+<div id="b" class="section scrollspy">
+    <h3 class="white-text">B</h3>
+</div>
+    <!--Searches database for slang in collection called words-->
     {% for slang in words %}
+        <!--Only collects data where first letter is equivalent to 'B'-->
         {% if slang.slang_term[0] == "B" %}
             <ul class="collapsible">
                 <li>
                     <div class=" row collapsible-header blue-grey darken-1           white-text col s12">
-                        <div class="col s10">
+                        <div class="col s10 font-size">
                             <i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
-                            <i class="arrow fas fa-long-arrow-alt-right"></i> <em>{{ slang.slang_definition }}</em>
+                            <i class="arrow fas fa-long-arrow-alt-right" id="hide-arrow-b"></i> <em id="hide-definition-b">{{ slang.slang_definition }}</em>
+                            <div class="hide-arrow-definition">
+                                <i class="arrow fas fa-long-arrow-alt-right" ></i> <em >{{ slang.slang_definition }}</em>
+                            </div>
                         </div>
-                        <div class="col s2">
+                        <div class="col s3 center-align">
+                            <!--Adds name of logged in user who created slang-->
                             {% if session.user|lower == slang.created_by|lower %}
                             <a href="{{ url_for('edit_slang', slang_id=slang._id)}}" class=" btn-small edit-button">
                                 Edit</a>
                             {% endif %}
                         </div>
                     </div>
+                    <!--Adds date slang created on using python datetime-->
                     <div class="collapsible-body white">
                         <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
                     </div>
@@ -107,26 +117,32 @@
         {% endif %}
     {% endfor %}
 
-        <div id="c" class="section scrollspy white-text">
-        <h3>C</h3>
-    </div>
-
+<div id="c" class="section scrollspy">
+    <h3 class="white-text">C</h3>
+</div>
+    <!--Searches database for slang in collection called words-->
     {% for slang in words %}
+        <!--Only collects data where first letter is equivalent to 'C'-->
         {% if slang.slang_term[0] == "C" %}
             <ul class="collapsible">
                 <li>
                     <div class=" row collapsible-header blue-grey darken-1           white-text col s12">
-                        <div class="col s10">
+                        <div class="col s10 font-size">
                             <i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
-                            <i class="arrow fas fa-long-arrow-alt-right"></i> <em>{{ slang.slang_definition }}</em>
+                            <i class="arrow fas fa-long-arrow-alt-right" id="hide-arrow-c"></i> <em id="hide-definition-c">{{ slang.slang_definition }}</em>
+                            <div class="hide-arrow-definition">
+                                <i class="arrow fas fa-long-arrow-alt-right" ></i> <em >{{ slang.slang_definition }}</em>
+                            </div>
                         </div>
-                        <div class="col s2">
+                        <div class="col s3 center-align">
+                            <!--Adds name of logged in user who created slang-->
                             {% if session.user|lower == slang.created_by|lower %}
                             <a href="{{ url_for('edit_slang', slang_id=slang._id)}}" class=" btn-small edit-button">
                                 Edit</a>
                             {% endif %}
                         </div>
                     </div>
+                    <!--Adds date slang created on using python datetime-->
                     <div class="collapsible-body white">
                         <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
                     </div>
@@ -135,26 +151,32 @@
         {% endif %}
     {% endfor %}
 
-        <div id="d" class="section scrollspy white-text">
-        <h3>D</h3>
-    </div>
-
+<div id="d" class="section scrollspy">
+    <h3 class="white-text">D</h3>
+</div>
+    <!--Searches database for slang in collection called words-->
     {% for slang in words %}
+        <!--Only collects data where first letter is equivalent to 'D'-->
         {% if slang.slang_term[0] == "D" %}
             <ul class="collapsible">
                 <li>
                     <div class=" row collapsible-header blue-grey darken-1           white-text col s12">
-                        <div class="col s10">
+                        <div class="col s10 font-size">
                             <i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
-                            <i class="arrow fas fa-long-arrow-alt-right"></i> <em>{{ slang.slang_definition }}</em>
+                            <i class="arrow fas fa-long-arrow-alt-right" id="hide-arrow-d"></i> <em id="hide-definition-d">{{ slang.slang_definition }}</em>
+                            <div class="hide-arrow-definition">
+                                <i class="arrow fas fa-long-arrow-alt-right" ></i> <em >{{ slang.slang_definition }}</em>
+                            </div>
                         </div>
-                        <div class="col s2">
+                        <div class="col s3 center-align">
+                            <!--Adds name of logged in user who created slang-->
                             {% if session.user|lower == slang.created_by|lower %}
                             <a href="{{ url_for('edit_slang', slang_id=slang._id)}}" class=" btn-small edit-button">
                                 Edit</a>
                             {% endif %}
                         </div>
                     </div>
+                    <!--Adds date slang created on using python datetime-->
                     <div class="collapsible-body white">
                         <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
                     </div>
@@ -163,26 +185,32 @@
         {% endif %}
     {% endfor %}
 
-        <div id="e" class="section scrollspy white-text">
-        <h3>E</h3>
-    </div>
-
+<div id="e" class="section scrollspy">
+    <h3 class="white-text">E</h3>
+</div>
+    <!--Searches database for slang in collection called words-->
     {% for slang in words %}
+        <!--Only collects data where first letter is equivalent to 'E'-->
         {% if slang.slang_term[0] == "E" %}
             <ul class="collapsible">
                 <li>
                     <div class=" row collapsible-header blue-grey darken-1           white-text col s12">
-                        <div class="col s10">
+                        <div class="col s10 font-size">
                             <i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
-                            <i class="arrow fas fa-long-arrow-alt-right"></i> <em>{{ slang.slang_definition }}</em>
+                            <i class="arrow fas fa-long-arrow-alt-right" id="hide-arrow-e"></i> <em id="hide-definition-e">{{ slang.slang_definition }}</em>
+                            <div class="hide-arrow-definition">
+                                <i class="arrow fas fa-long-arrow-alt-right" ></i> <em >{{ slang.slang_definition }}</em>
+                            </div>
                         </div>
-                        <div class="col s2">
+                        <div class="col s3 center-align">
+                            <!--Adds name of logged in user who created slang-->
                             {% if session.user|lower == slang.created_by|lower %}
                             <a href="{{ url_for('edit_slang', slang_id=slang._id)}}" class=" btn-small edit-button">
                                 Edit</a>
                             {% endif %}
                         </div>
                     </div>
+                    <!--Adds date slang created on using python datetime-->
                     <div class="collapsible-body white">
                         <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
                     </div>
@@ -191,26 +219,32 @@
         {% endif %}
     {% endfor %}
 
-        <div id="f" class="section scrollspy white-text">
-        <h3>F</h3>
-    </div>
-
+<div id="f" class="section scrollspy">
+    <h3 class="white-text">F</h3>
+</div>
+    <!--Searches database for slang in collection called words-->
     {% for slang in words %}
+        <!--Only collects data where first letter is equivalent to 'F'-->
         {% if slang.slang_term[0] == "F" %}
             <ul class="collapsible">
                 <li>
                     <div class=" row collapsible-header blue-grey darken-1           white-text col s12">
-                        <div class="col s10">
+                        <div class="col s10 font-size">
                             <i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
-                            <i class="arrow fas fa-long-arrow-alt-right"></i> <em>{{ slang.slang_definition }}</em>
+                            <i class="arrow fas fa-long-arrow-alt-right" id="hide-arrow-f"></i> <em id="hide-definition-f">{{ slang.slang_definition }}</em>
+                            <div class="hide-arrow-definition">
+                                <i class="arrow fas fa-long-arrow-alt-right" ></i> <em >{{ slang.slang_definition }}</em>
+                            </div>
                         </div>
-                        <div class="col s2">
+                        <div class="col s3 center-align">
+                            <!--Adds name of logged in user who created slang-->
                             {% if session.user|lower == slang.created_by|lower %}
                             <a href="{{ url_for('edit_slang', slang_id=slang._id)}}" class=" btn-small edit-button">
                                 Edit</a>
                             {% endif %}
                         </div>
                     </div>
+                    <!--Adds date slang created on using python datetime-->
                     <div class="collapsible-body white">
                         <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
                     </div>
@@ -219,26 +253,32 @@
         {% endif %}
     {% endfor %}
 
-        <div id="g" class="section scrollspy white-text">
-        <h3>G</h3>
-    </div>
-
+<div id="g" class="section scrollspy">
+    <h3 class="white-text">G</h3>
+</div>
+    <!--Searches database for slang in collection called words-->
     {% for slang in words %}
+        <!--Only collects data where first letter is equivalent to 'G'-->
         {% if slang.slang_term[0] == "G" %}
             <ul class="collapsible">
                 <li>
                     <div class=" row collapsible-header blue-grey darken-1           white-text col s12">
-                        <div class="col s10">
+                        <div class="col s10 font-size">
                             <i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
-                            <i class="arrow fas fa-long-arrow-alt-right"></i> <em>{{ slang.slang_definition }}</em>
+                            <i class="arrow fas fa-long-arrow-alt-right" id="hide-arrow-g"></i> <em id="hide-definition-g">{{ slang.slang_definition }}</em>
+                            <div class="hide-arrow-definition">
+                                <i class="arrow fas fa-long-arrow-alt-right" ></i> <em >{{ slang.slang_definition }}</em>
+                            </div>
                         </div>
-                        <div class="col s2">
+                        <div class="col s3 center-align">
+                            <!--Adds name of logged in user who created slang-->
                             {% if session.user|lower == slang.created_by|lower %}
                             <a href="{{ url_for('edit_slang', slang_id=slang._id)}}" class=" btn-small edit-button">
                                 Edit</a>
                             {% endif %}
                         </div>
                     </div>
+                    <!--Adds date slang created on using python datetime-->
                     <div class="collapsible-body white">
                         <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
                     </div>
@@ -247,26 +287,32 @@
         {% endif %}
     {% endfor %}
 
-        <div id="h" class="section scrollspy white-text">
-        <h3>H</h3>
-    </div>
-
+<div id="h" class="section scrollspy">
+    <h3 class="white-text">H</h3>
+</div>
+    <!--Searches database for slang in collection called words-->
     {% for slang in words %}
+        <!--Only collects data where first letter is equivalent to 'H'-->
         {% if slang.slang_term[0] == "H" %}
             <ul class="collapsible">
                 <li>
                     <div class=" row collapsible-header blue-grey darken-1           white-text col s12">
-                        <div class="col s10">
+                        <div class="col s10 font-size">
                             <i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
-                            <i class="arrow fas fa-long-arrow-alt-right"></i> <em>{{ slang.slang_definition }}</em>
+                            <i class="arrow fas fa-long-arrow-alt-right" id="hide-arrow-h"></i> <em id="hide-definition-h">{{ slang.slang_definition }}</em>
+                            <div class="hide-arrow-definition">
+                                <i class="arrow fas fa-long-arrow-alt-right" ></i> <em >{{ slang.slang_definition }}</em>
+                            </div>
                         </div>
-                        <div class="col s2">
+                        <div class="col s3 center-align">
+                            <!--Adds name of logged in user who created slang-->
                             {% if session.user|lower == slang.created_by|lower %}
                             <a href="{{ url_for('edit_slang', slang_id=slang._id)}}" class=" btn-small edit-button">
                                 Edit</a>
                             {% endif %}
                         </div>
                     </div>
+                    <!--Adds date slang created on using python datetime-->
                     <div class="collapsible-body white">
                         <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
                     </div>
@@ -275,26 +321,32 @@
         {% endif %}
     {% endfor %}
 
-        <div id="i" class="section scrollspy white-text">
-        <h3>I</h3>
-    </div>
-
+<div id="i" class="section scrollspy">
+    <h3 class="white-text">I</h3>
+</div>
+    <!--Searches database for slang in collection called words-->
     {% for slang in words %}
+        <!--Only collects data where first letter is equivalent to 'I'-->
         {% if slang.slang_term[0] == "I" %}
             <ul class="collapsible">
                 <li>
                     <div class=" row collapsible-header blue-grey darken-1           white-text col s12">
-                        <div class="col s10">
+                        <div class="col s10 font-size">
                             <i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
-                            <i class="arrow fas fa-long-arrow-alt-right"></i> <em>{{ slang.slang_definition }}</em>
+                            <i class="arrow fas fa-long-arrow-alt-right" id="hide-arrow-i"></i> <em id="hide-definition-i">{{ slang.slang_definition }}</em>
+                            <div class="hide-arrow-definition">
+                                <i class="arrow fas fa-long-arrow-alt-right" ></i> <em >{{ slang.slang_definition }}</em>
+                            </div>
                         </div>
-                        <div class="col s2">
+                        <div class="col s3 center-align">
+                            <!--Adds name of logged in user who created slang-->
                             {% if session.user|lower == slang.created_by|lower %}
                             <a href="{{ url_for('edit_slang', slang_id=slang._id)}}" class=" btn-small edit-button">
                                 Edit</a>
                             {% endif %}
                         </div>
                     </div>
+                    <!--Adds date slang created on using python datetime-->
                     <div class="collapsible-body white">
                         <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
                     </div>
@@ -303,26 +355,32 @@
         {% endif %}
     {% endfor %}
 
-        <div id="j" class="section scrollspy white-text">
-        <h3>J</h3>
-    </div>
-
+<div id="j" class="section scrollspy">
+    <h3 class="white-text">J</h3>
+</div>
+    <!--Searches database for slang in collection called words-->
     {% for slang in words %}
+        <!--Only collects data where first letter is equivalent to 'J'-->
         {% if slang.slang_term[0] == "J" %}
             <ul class="collapsible">
                 <li>
                     <div class=" row collapsible-header blue-grey darken-1           white-text col s12">
-                        <div class="col s10">
+                        <div class="col s10 font-size">
                             <i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
-                            <i class="arrow fas fa-long-arrow-alt-right"></i> <em>{{ slang.slang_definition }}</em>
+                            <i class="arrow fas fa-long-arrow-alt-right" id="hide-arrow-j"></i> <em id="hide-definition-j">{{ slang.slang_definition }}</em>
+                            <div class="hide-arrow-definition">
+                                <i class="arrow fas fa-long-arrow-alt-right" ></i> <em >{{ slang.slang_definition }}</em>
+                            </div>
                         </div>
-                        <div class="col s2">
+                        <div class="col s3 center-align">
+                            <!--Adds name of logged in user who created slang-->
                             {% if session.user|lower == slang.created_by|lower %}
                             <a href="{{ url_for('edit_slang', slang_id=slang._id)}}" class=" btn-small edit-button">
                                 Edit</a>
                             {% endif %}
                         </div>
                     </div>
+                    <!--Adds date slang created on using python datetime-->
                     <div class="collapsible-body white">
                         <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
                     </div>
@@ -331,26 +389,32 @@
         {% endif %}
     {% endfor %}
 
-        <div id="k" class="section scrollspy white-text">
-        <h3>K</h3>
-    </div>
-
+<div id="k" class="section scrollspy">
+    <h3 class="white-text">K</h3>
+</div>
+    <!--Searches database for slang in collection called words-->
     {% for slang in words %}
+        <!--Only collects data where first letter is equivalent to 'K'-->
         {% if slang.slang_term[0] == "K" %}
             <ul class="collapsible">
                 <li>
                     <div class=" row collapsible-header blue-grey darken-1           white-text col s12">
-                        <div class="col s10">
+                        <div class="col s10 font-size">
                             <i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
-                            <i class="arrow fas fa-long-arrow-alt-right"></i> <em>{{ slang.slang_definition }}</em>
+                            <i class="arrow fas fa-long-arrow-alt-right" id="hide-arrow-k"></i> <em id="hide-definition-k">{{ slang.slang_definition }}</em>
+                            <div class="hide-arrow-definition">
+                                <i class="arrow fas fa-long-arrow-alt-right" ></i> <em >{{ slang.slang_definition }}</em>
+                            </div>
                         </div>
-                        <div class="col s2">
+                        <div class="col s3 center-align">
+                            <!--Adds name of logged in user who created slang-->
                             {% if session.user|lower == slang.created_by|lower %}
                             <a href="{{ url_for('edit_slang', slang_id=slang._id)}}" class=" btn-small edit-button">
                                 Edit</a>
                             {% endif %}
                         </div>
                     </div>
+                    <!--Adds date slang created on using python datetime-->
                     <div class="collapsible-body white">
                         <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
                     </div>
@@ -359,26 +423,32 @@
         {% endif %}
     {% endfor %}
 
-        <div id="l" class="section scrollspy white-text">
-        <h3>L</h3>
-    </div>
-
+<div id="l" class="section scrollspy">
+    <h3 class="white-text">L</h3>
+</div>
+    <!--Searches database for slang in collection called words-->
     {% for slang in words %}
+        <!--Only collects data where first letter is equivalent to 'L'-->
         {% if slang.slang_term[0] == "L" %}
             <ul class="collapsible">
                 <li>
                     <div class=" row collapsible-header blue-grey darken-1           white-text col s12">
-                        <div class="col s10">
+                        <div class="col s10 font-size">
                             <i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
-                            <i class="arrow fas fa-long-arrow-alt-right"></i> <em>{{ slang.slang_definition }}</em>
+                            <i class="arrow fas fa-long-arrow-alt-right" id="hide-arrow-l"></i> <em id="hide-definition-l">{{ slang.slang_definition }}</em>
+                            <div class="hide-arrow-definition">
+                                <i class="arrow fas fa-long-arrow-alt-right" ></i> <em >{{ slang.slang_definition }}</em>
+                            </div>
                         </div>
-                        <div class="col s2">
+                        <div class="col s3 center-align">
+                            <!--Adds name of logged in user who created slang-->
                             {% if session.user|lower == slang.created_by|lower %}
                             <a href="{{ url_for('edit_slang', slang_id=slang._id)}}" class=" btn-small edit-button">
                                 Edit</a>
                             {% endif %}
                         </div>
                     </div>
+                    <!--Adds date slang created on using python datetime-->
                     <div class="collapsible-body white">
                         <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
                     </div>
@@ -387,26 +457,32 @@
         {% endif %}
     {% endfor %}
 
-        <div id="m" class="section scrollspy white-text">
-        <h3>M</h3>
-    </div>
-
+<div id="m" class="section scrollspy">
+    <h3 class="white-text">M</h3>
+</div>
+    <!--Searches database for slang in collection called words-->
     {% for slang in words %}
+        <!--Only collects data where first letter is equivalent to 'M'-->
         {% if slang.slang_term[0] == "M" %}
             <ul class="collapsible">
                 <li>
                     <div class=" row collapsible-header blue-grey darken-1           white-text col s12">
-                        <div class="col s10">
+                        <div class="col s10 font-size">
                             <i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
-                            <i class="arrow fas fa-long-arrow-alt-right"></i> <em>{{ slang.slang_definition }}</em>
+                            <i class="arrow fas fa-long-arrow-alt-right" id="hide-arrow-m"></i> <em id="hide-definition-m">{{ slang.slang_definition }}</em>
+                            <div class="hide-arrow-definition">
+                                <i class="arrow fas fa-long-arrow-alt-right" ></i> <em >{{ slang.slang_definition }}</em>
+                            </div>
                         </div>
-                        <div class="col s2">
+                        <div class="col s3 center-align">
+                            <!--Adds name of logged in user who created slang-->
                             {% if session.user|lower == slang.created_by|lower %}
                             <a href="{{ url_for('edit_slang', slang_id=slang._id)}}" class=" btn-small edit-button">
                                 Edit</a>
                             {% endif %}
                         </div>
                     </div>
+                    <!--Adds date slang created on using python datetime-->
                     <div class="collapsible-body white">
                         <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
                     </div>
@@ -415,26 +491,32 @@
         {% endif %}
     {% endfor %}
 
-        <div id="n" class="section scrollspy white-text">
-        <h3>N</h3>
-    </div>
-
+<div id="n" class="section scrollspy">
+    <h3 class="white-text">N</h3>
+</div>
+    <!--Searches database for slang in collection called words-->
     {% for slang in words %}
+        <!--Only collects data where first letter is equivalent to 'N'-->
         {% if slang.slang_term[0] == "N" %}
             <ul class="collapsible">
                 <li>
                     <div class=" row collapsible-header blue-grey darken-1           white-text col s12">
-                        <div class="col s10">
+                        <div class="col s10 font-size">
                             <i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
-                            <i class="arrow fas fa-long-arrow-alt-right"></i> <em>{{ slang.slang_definition }}</em>
+                            <i class="arrow fas fa-long-arrow-alt-right" id="hide-arrow-n"></i> <em id="hide-definition-n">{{ slang.slang_definition }}</em>
+                            <div class="hide-arrow-definition">
+                                <i class="arrow fas fa-long-arrow-alt-right" ></i> <em >{{ slang.slang_definition }}</em>
+                            </div>
                         </div>
-                        <div class="col s2">
+                        <div class="col s3 center-align">
+                            <!--Adds name of logged in user who created slang-->
                             {% if session.user|lower == slang.created_by|lower %}
                             <a href="{{ url_for('edit_slang', slang_id=slang._id)}}" class=" btn-small edit-button">
                                 Edit</a>
                             {% endif %}
                         </div>
                     </div>
+                    <!--Adds date slang created on using python datetime-->
                     <div class="collapsible-body white">
                         <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
                     </div>
@@ -443,26 +525,32 @@
         {% endif %}
     {% endfor %}
 
-        <div id="o" class="section scrollspy white-text">
-        <h3>O</h3>
-    </div>
-
+<div id="o" class="section scrollspy">
+    <h3 class="white-text">O</h3>
+</div>
+    <!--Searches database for slang in collection called words-->
     {% for slang in words %}
+        <!--Only collects data where first letter is equivalent to 'O'-->
         {% if slang.slang_term[0] == "O" %}
             <ul class="collapsible">
                 <li>
                     <div class=" row collapsible-header blue-grey darken-1           white-text col s12">
-                        <div class="col s10">
+                        <div class="col s10 font-size">
                             <i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
-                            <i class="arrow fas fa-long-arrow-alt-right"></i> <em>{{ slang.slang_definition }}</em>
+                            <i class="arrow fas fa-long-arrow-alt-right" id="hide-arrow-o"></i> <em id="hide-definition-o">{{ slang.slang_definition }}</em>
+                            <div class="hide-arrow-definition">
+                                <i class="arrow fas fa-long-arrow-alt-right" ></i> <em >{{ slang.slang_definition }}</em>
+                            </div>
                         </div>
-                        <div class="col s2">
+                        <div class="col s3 center-align">
+                            <!--Adds name of logged in user who created slang-->
                             {% if session.user|lower == slang.created_by|lower %}
                             <a href="{{ url_for('edit_slang', slang_id=slang._id)}}" class=" btn-small edit-button">
                                 Edit</a>
                             {% endif %}
                         </div>
                     </div>
+                    <!--Adds date slang created on using python datetime-->
                     <div class="collapsible-body white">
                         <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
                     </div>
@@ -471,26 +559,32 @@
         {% endif %}
     {% endfor %}
 
-        <div id="p" class="section scrollspy white-text">
-        <h3>P</h3>
-    </div>
-
+<div id="p" class="section scrollspy">
+    <h3 class="white-text">P</h3>
+</div>
+    <!--Searches database for slang in collection called words-->
     {% for slang in words %}
+        <!--Only collects data where first letter is equivalent to 'P'-->
         {% if slang.slang_term[0] == "P" %}
             <ul class="collapsible">
                 <li>
                     <div class=" row collapsible-header blue-grey darken-1           white-text col s12">
-                        <div class="col s10">
+                        <div class="col s10 font-size">
                             <i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
-                            <i class="arrow fas fa-long-arrow-alt-right"></i> <em>{{ slang.slang_definition }}</em>
+                            <i class="arrow fas fa-long-arrow-alt-right" id="hide-arrow-p"></i> <em id="hide-definition-p">{{ slang.slang_definition }}</em>
+                            <div class="hide-arrow-definition">
+                                <i class="arrow fas fa-long-arrow-alt-right" ></i> <em >{{ slang.slang_definition }}</em>
+                            </div>
                         </div>
-                        <div class="col s2">
+                        <div class="col s3 center-align">
+                            <!--Adds name of logged in user who created slang-->
                             {% if session.user|lower == slang.created_by|lower %}
                             <a href="{{ url_for('edit_slang', slang_id=slang._id)}}" class=" btn-small edit-button">
                                 Edit</a>
                             {% endif %}
                         </div>
                     </div>
+                    <!--Adds date slang created on using python datetime-->
                     <div class="collapsible-body white">
                         <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
                     </div>
@@ -499,26 +593,32 @@
         {% endif %}
     {% endfor %}
 
-        <div id="q" class="section scrollspy white-text">
-        <h3>Q</h3>
-    </div>
-
+<div id="q" class="section scrollspy">
+    <h3 class="white-text">Q</h3>
+</div>
+    <!--Searches database for slang in collection called words-->
     {% for slang in words %}
+        <!--Only collects data where first letter is equivalent to 'Q'-->
         {% if slang.slang_term[0] == "Q" %}
             <ul class="collapsible">
                 <li>
                     <div class=" row collapsible-header blue-grey darken-1           white-text col s12">
-                        <div class="col s10">
+                        <div class="col s10 font-size">
                             <i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
-                            <i class="arrow fas fa-long-arrow-alt-right"></i> <em>{{ slang.slang_definition }}</em>
+                            <i class="arrow fas fa-long-arrow-alt-right" id="hide-arrow-q"></i> <em id="hide-definition-q">{{ slang.slang_definition }}</em>
+                            <div class="hide-arrow-definition">
+                                <i class="arrow fas fa-long-arrow-alt-right" ></i> <em >{{ slang.slang_definition }}</em>
+                            </div>
                         </div>
-                        <div class="col s2">
+                        <div class="col s3 center-align">
+                            <!--Adds name of logged in user who created slang-->
                             {% if session.user|lower == slang.created_by|lower %}
                             <a href="{{ url_for('edit_slang', slang_id=slang._id)}}" class=" btn-small edit-button">
                                 Edit</a>
                             {% endif %}
                         </div>
                     </div>
+                    <!--Adds date slang created on using python datetime-->
                     <div class="collapsible-body white">
                         <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
                     </div>
@@ -527,26 +627,32 @@
         {% endif %}
     {% endfor %}
 
-        <div id="r" class="section scrollspy white-text">
-        <h3>R</h3>
-    </div>
-
+<div id="r" class="section scrollspy">
+    <h3 class="white-text">R</h3>
+</div>
+    <!--Searches database for slang in collection called words-->
     {% for slang in words %}
+        <!--Only collects data where first letter is equivalent to 'R'-->
         {% if slang.slang_term[0] == "R" %}
             <ul class="collapsible">
                 <li>
                     <div class=" row collapsible-header blue-grey darken-1           white-text col s12">
-                        <div class="col s10">
+                        <div class="col s10 font-size">
                             <i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
-                            <i class="arrow fas fa-long-arrow-alt-right"></i> <em>{{ slang.slang_definition }}</em>
+                            <i class="arrow fas fa-long-arrow-alt-right" id="hide-arrow-r"></i> <em id="hide-definition-r">{{ slang.slang_definition }}</em>
+                            <div class="hide-arrow-definition">
+                                <i class="arrow fas fa-long-arrow-alt-right" ></i> <em >{{ slang.slang_definition }}</em>
+                            </div>
                         </div>
-                        <div class="col s2">
+                        <div class="col s3 center-align">
+                            <!--Adds name of logged in user who created slang-->
                             {% if session.user|lower == slang.created_by|lower %}
                             <a href="{{ url_for('edit_slang', slang_id=slang._id)}}" class=" btn-small edit-button">
                                 Edit</a>
                             {% endif %}
                         </div>
                     </div>
+                    <!--Adds date slang created on using python datetime-->
                     <div class="collapsible-body white">
                         <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
                     </div>
@@ -555,26 +661,32 @@
         {% endif %}
     {% endfor %}
 
-        <div id="s" class="section scrollspy white-text">
-        <h3>S</h3>
-    </div>
-
+<div id="s" class="section scrollspy">
+    <h3 class="white-text">S</h3>
+</div>
+    <!--Searches database for slang in collection called words-->
     {% for slang in words %}
+        <!--Only collects data where first letter is equivalent to 'S'-->
         {% if slang.slang_term[0] == "S" %}
             <ul class="collapsible">
                 <li>
                     <div class=" row collapsible-header blue-grey darken-1           white-text col s12">
-                        <div class="col s10">
+                        <div class="col s10 font-size">
                             <i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
-                            <i class="arrow fas fa-long-arrow-alt-right"></i> <em>{{ slang.slang_definition }}</em>
+                            <i class="arrow fas fa-long-arrow-alt-right" id="hide-arrow-s"></i> <em id="hide-definition-s">{{ slang.slang_definition }}</em>
+                            <div class="hide-arrow-definition">
+                                <i class="arrow fas fa-long-arrow-alt-right" ></i> <em >{{ slang.slang_definition }}</em>
+                            </div>
                         </div>
-                        <div class="col s2">
+                        <div class="col s3 center-align">
+                            <!--Adds name of logged in user who created slang-->
                             {% if session.user|lower == slang.created_by|lower %}
                             <a href="{{ url_for('edit_slang', slang_id=slang._id)}}" class=" btn-small edit-button">
                                 Edit</a>
                             {% endif %}
                         </div>
                     </div>
+                    <!--Adds date slang created on using python datetime-->
                     <div class="collapsible-body white">
                         <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
                     </div>
@@ -583,26 +695,32 @@
         {% endif %}
     {% endfor %}
 
-        <div id="t" class="section scrollspy white-text">
-        <h3>T</h3>
-    </div>
-
+<div id="t" class="section scrollspy">
+    <h3 class="white-text">T</h3>
+</div>
+    <!--Searches database for slang in collection called words-->
     {% for slang in words %}
+        <!--Only collects data where first letter is equivalent to 'T'-->
         {% if slang.slang_term[0] == "T" %}
             <ul class="collapsible">
                 <li>
                     <div class=" row collapsible-header blue-grey darken-1           white-text col s12">
-                        <div class="col s10">
+                        <div class="col s10 font-size">
                             <i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
-                            <i class="arrow fas fa-long-arrow-alt-right"></i> <em>{{ slang.slang_definition }}</em>
+                            <i class="arrow fas fa-long-arrow-alt-right" id="hide-arrow-t"></i> <em id="hide-definition-t">{{ slang.slang_definition }}</em>
+                            <div class="hide-arrow-definition">
+                                <i class="arrow fas fa-long-arrow-alt-right" ></i> <em >{{ slang.slang_definition }}</em>
+                            </div>
                         </div>
-                        <div class="col s2">
+                        <div class="col s3 center-align">
+                            <!--Adds name of logged in user who created slang-->
                             {% if session.user|lower == slang.created_by|lower %}
                             <a href="{{ url_for('edit_slang', slang_id=slang._id)}}" class=" btn-small edit-button">
                                 Edit</a>
                             {% endif %}
                         </div>
                     </div>
+                    <!--Adds date slang created on using python datetime-->
                     <div class="collapsible-body white">
                         <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
                     </div>
@@ -611,26 +729,32 @@
         {% endif %}
     {% endfor %}
 
-        <div id="u" class="section scrollspy white-text">
-        <h3>U</h3>
-    </div>
-
+<div id="u" class="section scrollspy">
+    <h3 class="white-text">U</h3>
+</div>
+    <!--Searches database for slang in collection called words-->
     {% for slang in words %}
+        <!--Only collects data where first letter is equivalent to 'U'-->
         {% if slang.slang_term[0] == "U" %}
             <ul class="collapsible">
                 <li>
                     <div class=" row collapsible-header blue-grey darken-1           white-text col s12">
-                        <div class="col s10">
+                        <div class="col s10 font-size">
                             <i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
-                            <i class="arrow fas fa-long-arrow-alt-right"></i> <em>{{ slang.slang_definition }}</em>
+                            <i class="arrow fas fa-long-arrow-alt-right" id="hide-arrow-u"></i> <em id="hide-definition-u">{{ slang.slang_definition }}</em>
+                            <div class="hide-arrow-definition">
+                                <i class="arrow fas fa-long-arrow-alt-right" ></i> <em >{{ slang.slang_definition }}</em>
+                            </div>
                         </div>
-                        <div class="col s2">
+                        <div class="col s3 center-align">
+                            <!--Adds name of logged in user who created slang-->
                             {% if session.user|lower == slang.created_by|lower %}
                             <a href="{{ url_for('edit_slang', slang_id=slang._id)}}" class=" btn-small edit-button">
                                 Edit</a>
                             {% endif %}
                         </div>
                     </div>
+                    <!--Adds date slang created on using python datetime-->
                     <div class="collapsible-body white">
                         <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
                     </div>
@@ -639,26 +763,32 @@
         {% endif %}
     {% endfor %}
 
-        <div id="v" class="section scrollspy white-text">
-        <h3>V</h3>
-    </div>
-
+<div id="v" class="section scrollspy">
+    <h3 class="white-text">V</h3>
+</div>
+    <!--Searches database for slang in collection called words-->
     {% for slang in words %}
+        <!--Only collects data where first letter is equivalent to 'V'-->
         {% if slang.slang_term[0] == "V" %}
             <ul class="collapsible">
                 <li>
                     <div class=" row collapsible-header blue-grey darken-1           white-text col s12">
-                        <div class="col s10">
+                        <div class="col s10 font-size">
                             <i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
-                            <i class="arrow fas fa-long-arrow-alt-right"></i> <em>{{ slang.slang_definition }}</em>
+                            <i class="arrow fas fa-long-arrow-alt-right" id="hide-arrow-v"></i> <em id="hide-definition-v">{{ slang.slang_definition }}</em>
+                            <div class="hide-arrow-definition">
+                                <i class="arrow fas fa-long-arrow-alt-right" ></i> <em >{{ slang.slang_definition }}</em>
+                            </div>
                         </div>
-                        <div class="col s2">
+                        <div class="col s3 center-align">
+                            <!--Adds name of logged in user who created slang-->
                             {% if session.user|lower == slang.created_by|lower %}
                             <a href="{{ url_for('edit_slang', slang_id=slang._id)}}" class=" btn-small edit-button">
                                 Edit</a>
                             {% endif %}
                         </div>
                     </div>
+                    <!--Adds date slang created on using python datetime-->
                     <div class="collapsible-body white">
                         <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
                     </div>
@@ -667,26 +797,32 @@
         {% endif %}
     {% endfor %}
 
-        <div id="w" class="section scrollspy white-text">
-        <h3>W</h3>
-    </div>
-
+<div id="w" class="section scrollspy">
+    <h3 class="white-text">W</h3>
+</div>
+    <!--Searches database for slang in collection called words-->
     {% for slang in words %}
+        <!--Only collects data where first letter is equivalent to 'W'-->
         {% if slang.slang_term[0] == "W" %}
             <ul class="collapsible">
                 <li>
                     <div class=" row collapsible-header blue-grey darken-1           white-text col s12">
-                        <div class="col s10">
+                        <div class="col s10 font-size">
                             <i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
-                            <i class="arrow fas fa-long-arrow-alt-right"></i> <em>{{ slang.slang_definition }}</em>
+                            <i class="arrow fas fa-long-arrow-alt-right" id="hide-arrow-w"></i> <em id="hide-definition-w">{{ slang.slang_definition }}</em>
+                            <div class="hide-arrow-definition">
+                                <i class="arrow fas fa-long-arrow-alt-right" ></i> <em >{{ slang.slang_definition }}</em>
+                            </div>
                         </div>
-                        <div class="col s2">
+                        <div class="col s3 center-align">
+                            <!--Adds name of logged in user who created slang-->
                             {% if session.user|lower == slang.created_by|lower %}
                             <a href="{{ url_for('edit_slang', slang_id=slang._id)}}" class=" btn-small edit-button">
                                 Edit</a>
                             {% endif %}
                         </div>
                     </div>
+                    <!--Adds date slang created on using python datetime-->
                     <div class="collapsible-body white">
                         <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
                     </div>
@@ -695,26 +831,32 @@
         {% endif %}
     {% endfor %}
 
-        <div id="x" class="section scrollspy white-text">
-        <h3>X</h3>
-    </div>
-
+<div id="x" class="section scrollspy">
+    <h3 class="white-text">X</h3>
+</div>
+    <!--Searches database for slang in collection called words-->
     {% for slang in words %}
+        <!--Only collects data where first letter is equivalent to 'X'-->
         {% if slang.slang_term[0] == "X" %}
             <ul class="collapsible">
                 <li>
                     <div class=" row collapsible-header blue-grey darken-1           white-text col s12">
-                        <div class="col s10">
+                        <div class="col s10 font-size">
                             <i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
-                            <i class="arrow fas fa-long-arrow-alt-right"></i> <em>{{ slang.slang_definition }}</em>
+                            <i class="arrow fas fa-long-arrow-alt-right" id="hide-arrow-x"></i> <em id="hide-definition-x">{{ slang.slang_definition }}</em>
+                            <div class="hide-arrow-definition">
+                                <i class="arrow fas fa-long-arrow-alt-right" ></i> <em >{{ slang.slang_definition }}</em>
+                            </div>
                         </div>
-                        <div class="col s2">
+                        <div class="col s3 center-align">
+                            <!--Adds name of logged in user who created slang-->
                             {% if session.user|lower == slang.created_by|lower %}
                             <a href="{{ url_for('edit_slang', slang_id=slang._id)}}" class=" btn-small edit-button">
                                 Edit</a>
                             {% endif %}
                         </div>
                     </div>
+                    <!--Adds date slang created on using python datetime-->
                     <div class="collapsible-body white">
                         <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
                     </div>
@@ -723,26 +865,32 @@
         {% endif %}
     {% endfor %}
 
-        <div id="y" class="section scrollspy white-text">
-        <h3>Y</h3>
-    </div>
-
+<div id="y" class="section scrollspy">
+    <h3 class="white-text">Y</h3>
+</div>
+    <!--Searches database for slang in collection called words-->
     {% for slang in words %}
+        <!--Only collects data where first letter is equivalent to 'Y'-->
         {% if slang.slang_term[0] == "Y" %}
             <ul class="collapsible">
                 <li>
                     <div class=" row collapsible-header blue-grey darken-1           white-text col s12">
-                        <div class="col s10">
+                        <div class="col s10 font-size">
                             <i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
-                            <i class="arrow fas fa-long-arrow-alt-right"></i> <em>{{ slang.slang_definition }}</em>
+                            <i class="arrow fas fa-long-arrow-alt-right" id="hide-arrow-y"></i> <em id="hide-definition-y">{{ slang.slang_definition }}</em>
+                            <div class="hide-arrow-definition">
+                                <i class="arrow fas fa-long-arrow-alt-right" ></i> <em >{{ slang.slang_definition }}</em>
+                            </div>
                         </div>
-                        <div class="col s2">
+                        <div class="col s3 center-align">
+                            <!--Adds name of logged in user who created slang-->
                             {% if session.user|lower == slang.created_by|lower %}
                             <a href="{{ url_for('edit_slang', slang_id=slang._id)}}" class=" btn-small edit-button">
                                 Edit</a>
                             {% endif %}
                         </div>
                     </div>
+                    <!--Adds date slang created on using python datetime-->
                     <div class="collapsible-body white">
                         <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
                     </div>
@@ -751,26 +899,32 @@
         {% endif %}
     {% endfor %}
 
-        <div id="z" class="section scrollspy white-text">
-        <h3>Z</h3>
-    </div>
-
+<div id="z" class="section scrollspy">
+    <h3 class="white-text">Z</h3>
+</div>
+    <!--Searches database for slang in collection called words-->
     {% for slang in words %}
+        <!--Only collects data where first letter is equivalent to 'Z'-->
         {% if slang.slang_term[0] == "Z" %}
             <ul class="collapsible">
                 <li>
                     <div class=" row collapsible-header blue-grey darken-1           white-text col s12">
-                        <div class="col s10">
+                        <div class="col s10 font-size">
                             <i class="fas fa-caret-down white-text"></i><strong>{{ slang.slang_term }}</strong> 
-                            <i class="arrow fas fa-long-arrow-alt-right"></i> <em>{{ slang.slang_definition }}</em>
+                            <i class="arrow fas fa-long-arrow-alt-right" id="hide-arrow-z"></i> <em id="hide-definition-z">{{ slang.slang_definition }}</em>
+                            <div class="hide-arrow-definition">
+                                <i class="arrow fas fa-long-arrow-alt-right" ></i> <em >{{ slang.slang_definition }}</em>
+                            </div>
                         </div>
-                        <div class="col s2">
+                        <div class="col s3 center-align">
+                            <!--Adds name of logged in user who created slang-->
                             {% if session.user|lower == slang.created_by|lower %}
                             <a href="{{ url_for('edit_slang', slang_id=slang._id)}}" class=" btn-small edit-button">
                                 Edit</a>
                             {% endif %}
                         </div>
                     </div>
+                    <!--Adds date slang created on using python datetime-->
                     <div class="collapsible-body white">
                         <span>Created by: {{ slang.created_by }} On: {{ slang.date_created }}</span>
                     </div>
@@ -778,6 +932,7 @@
             </ul>
         {% endif %}
     {% endfor %}
+
     <!--Floating action button-->
     <div class="fixed-action-btn">
         <a href="{{ url_for('get_words') }}" class="btn-floating btn-large white">

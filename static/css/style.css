@@ -1,12 +1,33 @@
+/*------------------------------------Base*/
+
 .background-image {
     background: url("../images/brickwall-background.jpg");
 }
+
+/*------------------------------------Words*/
+
+.alphabet a {
+    font-size: xx-large;
+}
+
+.arrow {
+    vertical-align: middle;
+}
+
+.section {
+    padding-top: 0;
+    padding-bottom: 1rem;
+}
+
+/*------------------------------------Profile*/
 
 .home-button {
     background-color: white;
     color:#546e7a;
     font-weight: bold;
 }
+
+/*------------------------------------Register/Login*/
 
 .register-button {
     background-color: white;
@@ -20,11 +41,15 @@
     font-weight: bold;
 }
 
+/*------------------------------------Add_slang*/
+
 .submit-button {
     background-color: white;
     color:#546e7a;
     font-weight: bold;
 }
+
+/*------------------------------------Edit_slang*/
 
 .edit-button {
     background-color: white;
@@ -40,6 +65,7 @@
     margin-left: auto;
 }
 
+/*------------------------------------Buttons*/
 
 .btn-large:hover {
     background-color: rgb(197, 194, 194);
@@ -49,19 +75,43 @@
     background-color: rgb(197, 194, 194);
 }
 
+/*------------------------------------Flash Messages*/
+
 .flash-message h4 {
     line-height: 2;
     color: #546e7a;
 }
 
-.alphabet a {
-    font-size: xx-large;
+/*------------------------------------Media Queries*/
+
+@media only screen and (max-width: 320px){
+    #chew-logo {
+        font-size: 1.8rem;
+    }
 }
 
-.arrow {
-    vertical-align: middle;
+/*---This is to make slang definition move to new line on smaller devices--*/
+@media only screen and (max-width: 500px){
+    #hide-arrow-a, #hide-arrow-b, #hide-arrow-c, #hide-arrow-d, #hide-arrow-e, #hide-arrow-f, #hide-arrow-g, #hide-arrow-h, #hide-arrow-i, #hide-arrow-j, #hide-arrow-k, #hide-arrow-l, #hide-arrow-m, #hide-arrow-n, #hide-arrow-o, #hide-arrow-p, #hide-arrow-q, #hide-arrow-r, #hide-arrow-s, #hide-arrow-t, #hide-arrow-u, #hide-arrow-v, #hide-arrow-w, #hide-arrow-x, #hide-arrow-y, #hide-arrow-z {
+        display: none;
+    }
+
+    #hide-definition-a, #hide-definition-b, #hide-definition-c, #hide-definition-d, #hide-definition-e, #hide-definition-f, #hide-definition-g, #hide-definition-h, #hide-definition-i, #hide-definition-j, #hide-definition-k, #hide-definition-l, #hide-definition-m, #hide-definition-n, #hide-definition-o, #hide-definition-p, #hide-definition-q, #hide-definition-r, #hide-definition-s, #hide-definition-t, #hide-definition-u, #hide-definition-v, #hide-definition-w, #hide-definition-x, #hide-definition-y, #hide-definition-z {
+        display: none;
+    }
+
+    .alphabet a {
+        font-size: x-large;
+    }
+
+    .font-size {
+        font-size: 12px;
+    }
 }
 
-.up-arrow {
-    color: #546e7a;
+/*---This hides the slang being on second line when on larger devices--*/
+@media only screen and (min-width: 501px){
+    .hide-arrow-definition {
+        display: none;
+    }
 }

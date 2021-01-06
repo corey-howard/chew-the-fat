@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-
+<br>
 <div class="row">
     <!--Add Slang Form-->
-    <div class="col s12 m8 offset-m2">
+    <div class="col s12">
         <div class="card-panel blue-grey darken-1">
             <h5 class="center-align blue-grey darken-1 white-text">Edit Slang</h5>
         </div>
@@ -26,19 +26,19 @@
                 <label for="slang_definition" class="white-text">Slang Definition</label>
             </div>
         </div>
-        <div class="row">
+        <div class="row col s12">
             <!--Submit button-->
-            <button type="submit" class="col s10 offset-m1 btn-large submit-button">
+            <button type="submit" class="col s12 btn-large submit-button">
                 Edit Slang <i class="fas fa-pencil-alt"></i></button>
         </div>
-        <div class="row">
+        <div class="row col s12">
             <!--Delete button-->
-            <a href="{{ url_for('delete_slang', slang_id=slang._id)}}" class="col s10 offset-m1 btn-large delete-button">
+            <a href="{{ url_for('delete_slang', slang_id=slang._id)}}" class="col s12 btn-large delete-button">
                 Delete Slang <i class="fas fa-trash-alt"></i></a>
         </div>
-        <div class="row">
+        <div class="row col s12">
             <!--Cancel button-->
-            <a href="{{ url_for('get_words') }}" class="col s10 offset-m1 btn-large register-button">
+            <a href="{{ url_for('get_words') }}" class="col s12 btn-large register-button">
                     Cancel <i class="fas fa-window-close"></i></a>
         </div>
     </form>
