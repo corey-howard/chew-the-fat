@@ -2,6 +2,8 @@
 
 .background-image {
     background: url("../images/brickwall-background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 /*------------------------------------Words*/
@@ -92,11 +94,18 @@
 
 /*---This is to make slang definition move to new line on smaller devices--*/
 @media only screen and (max-width: 500px){
-    #hide-arrow-a, #hide-arrow-b, #hide-arrow-c, #hide-arrow-d, #hide-arrow-e, #hide-arrow-f, #hide-arrow-g, #hide-arrow-h, #hide-arrow-i, #hide-arrow-j, #hide-arrow-k, #hide-arrow-l, #hide-arrow-m, #hide-arrow-n, #hide-arrow-o, #hide-arrow-p, #hide-arrow-q, #hide-arrow-r, #hide-arrow-s, #hide-arrow-t, #hide-arrow-u, #hide-arrow-v, #hide-arrow-w, #hide-arrow-x, #hide-arrow-y, #hide-arrow-z {
+    #hide-arrow-a, #hide-arrow-b, #hide-arrow-c, #hide-arrow-d, #hide-arrow-e, #hide-arrow-f, #hide-arrow-g, #hide-arrow-h, 
+    #hide-arrow-i, #hide-arrow-j, #hide-arrow-k, #hide-arrow-l, #hide-arrow-m, #hide-arrow-n, #hide-arrow-o, #hide-arrow-p, 
+    #hide-arrow-q, #hide-arrow-r, #hide-arrow-s, #hide-arrow-t, #hide-arrow-u, #hide-arrow-v, #hide-arrow-w, #hide-arrow-x, 
+    #hide-arrow-y, #hide-arrow-z {
         display: none;
     }
 
-    #hide-definition-a, #hide-definition-b, #hide-definition-c, #hide-definition-d, #hide-definition-e, #hide-definition-f, #hide-definition-g, #hide-definition-h, #hide-definition-i, #hide-definition-j, #hide-definition-k, #hide-definition-l, #hide-definition-m, #hide-definition-n, #hide-definition-o, #hide-definition-p, #hide-definition-q, #hide-definition-r, #hide-definition-s, #hide-definition-t, #hide-definition-u, #hide-definition-v, #hide-definition-w, #hide-definition-x, #hide-definition-y, #hide-definition-z {
+    #hide-definition-a, #hide-definition-b, #hide-definition-c, #hide-definition-d, #hide-definition-e, #hide-definition-f, 
+    #hide-definition-g, #hide-definition-h, #hide-definition-i, #hide-definition-j, #hide-definition-k, #hide-definition-l, 
+    #hide-definition-m, #hide-definition-n, #hide-definition-o, #hide-definition-p, #hide-definition-q, #hide-definition-r, 
+    #hide-definition-s, #hide-definition-t, #hide-definition-u, #hide-definition-v, #hide-definition-w, #hide-definition-x, 
+    #hide-definition-y, #hide-definition-z {
         display: none;
     }
 

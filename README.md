@@ -1,3 +1,61 @@
+# H1 Heading
+## H2 Heading
+### H3 Heading
+#### H4 Heading
+
+---
+
+## Lists
+
+1. A list with Numbers
+2. A list with Numbers
+3. A list with Numbers
+
+* A list with bulletpoints
+* A list with bullet points
+* A list with bulletpoints
+
+---
+
+## Links and images
+
+[A link to github](https://github.com)
+![alt text here](icon.png)
+
+# Third Milestone Project - Chew The Fat
+
+
+
+## Table of Contents
+
+1. UX
+* Project Goals
+* Player Goals
+* Parental Goals
+* Developer and Business Goals
+* User Stories
+* Design Choices
+* Wireframes
+
+2. Features
+* Existing Features
+* Features left to implement
+
+3. Technologies Used
+
+4. Testing
+
+5. Deployment
+* How to run this project locally
+
+6. Credits
+* Content
+* Media
+* Code
+* Acknowledgements
+
+
+
 Werkzeug Security helpers for user information
 
 https://werkzeug.palletsprojects.com/en/1.0.x/utils/#module-werkzeug.security
@@ -6,7 +64,7 @@ Flask cheat sheet and secondary password
 
 https://prettyprinted.com
 
-hashlib - 
+hashlib 
 
 https://docs.python.org/3/library/hashlib.html
 
@@ -37,6 +95,10 @@ https://stackoverflow.com/questions/44974291/ansible-loop-over-range-of-letters-
 PEP 8 compliance
 
 https://www.python.org/dev/peps/pep-0008/
+
+Font Awesome Icons
+
+https://fontawesome.com/
 
 IMAGES
 
