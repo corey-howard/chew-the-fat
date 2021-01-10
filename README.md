@@ -1,28 +1,6 @@
-# H1 Heading
-## H2 Heading
-### H3 Heading
-#### H4 Heading
-
----
-
-## Lists
-
-1. A list with Numbers
-2. A list with Numbers
-3. A list with Numbers
-
-* A list with bulletpoints
-* A list with bullet points
-* A list with bulletpoints
-
----
-
-## Links and images
-
-[A link to github](https://github.com)
-![alt text here](icon.png)
-
 # Third Milestone Project - Chew The Fat
+
+![device-mockup](static/images/device-mockup.png)
 
 Welcome to Chew the Fat, a place for curious minds to learn Cockney Rhyming Slang, or for veterans in the art of speaking
 Chitty Chitty Bang Bang (Cockney Rhyming Slang), to add to the ever expanding dictionary for all to see. Perhaps you've visited
@@ -216,15 +194,76 @@ throughout the site as a visual aid for users.
 
 ---
 
+### Base
+
+I created a template called base.html to hold all the content that will be displayed on each page of the site. This way I can use jinja
+templating language for all the other pages to inherit the code from base.html, then I only need to concentrate on the code/content
+specific to that page. The base.html template declares that it's a html document and houses the head element that contains all the link 
+tags for the site. The body element is also stored in base.html which contains the background image, the navbar/logo, mobile navbar and logo, 
+section for flash messages to display, the main element where content from other pages will be displayed and finally the script tags.
+
+The logo and navbar is displayed at the top of the page, the logo is centralised and acts as link back to the home page (words.html), the
+navbar is displayed on the right at the top, with the navigation button is order of relevance/most commonly used from left to right. All
+these features are responsive and work on different screen sizes, the navbar converts into a collapsable navbar when screen sizes become
+too small to display the full navbar.
+
 #### Home
+
+The main feature of the home page (words.html) is that of the dictionary of slang terms. As part of the UX it was important that users
+are able to obtain the information they desired from the very first page they encounter. Below the navbar the heading is displayed, this
+is to clarify what the site is for, as the site name does not neccessarily give a clear indication to what the site is. Following that is
+the alphabet running from A-Z, these act as links for users to quickly navigate through the dictionary, as most users will arrive at the
+site knowing what slang term they're looking for, they can click on the letter it begins with and will be navigated to that point. The
+slang term and their definitions are then displayed after the alphabet links, the slang terms are separated by a heading of each letter of
+the alphabet, these act as the scrollspy's. The slang entries are displayed in a materialize collapsable, so the slang term and it's
+definition are displayed, but when clicked on, the user who created the entry and the date it was created on are displayed. If a user is
+logged in to the site and have previously created a slang entry, an edit button will appear next to the entry, this will only appear to
+the user who has created the entry so other users cannot edit it. I decided against using a sticky navbar because I didn't believ it was 
+neccessary for the site, this is because there is only one main feature of the site which is the dictionary itself, so as a user is scrolling
+through the terms, it's not in their best interest to need to quickly navigate to another part of the site. With this being said, I did 
+believe it to be neccessary to have a function that will return the user to the top of the page at any point, so I created a floating action 
+button to achieve this.
 
 #### Log In
 
+The Log In page, quite self-explanatory, is the page where users who have already registered can log in using their credentials. This is
+comprised of a materialize form including two fields, one for username and one for password. The form uses pythons flask to check the users
+log in credentials match to those that are stored in the mongoDB database. There are two buttons below the form, one to log the user in, if
+pressed and log in was successful, will redirect the user to the home page, if unsuccessful will return back to the log in page. The other 
+button is for incase the user found themselves on the log in page without actually registering, so clicking on the register button will take
+the user to the registration page.
+
 #### Register
+
+The Register page is basically a carbon copy of the Log In page, apart from the flask code that governs it. When a user tries to create
+their username, it is checked to see if the username already exists and if so, returns the user back to the registration page to try again.
+Once the user has successfully registered via clicking the register button, it directs them to their profile page.
+
+#### Profile
+
+The Profile page is quite simply a go to page for once the user has successfully registered, it takes them to their profile to show that
+their registration was a success. There is also a brief introduction to the site and a few rules for when adding slang entries to the site.
+It has quite a nice feature that displays the users name at the top of the page, this is achieved again by using jinja and targeting the
+username. I have tried torepeat this throughout when addressing the user directly by using their username. Below this are two navigation 
+buttons, one to take the user back to the home page, the other is the add slang button. Clicking this will take the user to the add slang page.
 
 #### Add Slang
 
-#### Profile
+The Add Slang page is where users that have logged in can access, here they can add slang entries for the dictionary. It is made up of a 
+simple materialize form, with two fields to be filled. One being the slang term and the other being slang definition. Both of which is linked 
+to the mongoDB collection for words under their respective id's of slang_term and slang_definition. Once the user has successfully created
+the slang term and it's definition, it is stored in the database and is inserted into the home page dictionary in alphabetical order, this
+has been achieved by sorting the data alphabetically in the python code. The users slang entries will be clearly visible as they will have
+an edit button next to them that only they can see.
+
+#### Edit
+
+The final page of the site is the Edit Slang page, quite simply this is where users can edit the input fields of their entries, perhaps for
+if they've noticed spelling mistakes or maybe the definitipn isn't quite correct. The user can also delete their entry altogether. These
+changes first and foremost are made to the database, but as the data is retieved from the database, these changes will also appear on the site.
+These actions can be completed by pressing the edit slang button or delete slang button. If the user changes their mind they can press the
+cancel button, all 3 buttons available to the user on this page will redirect the user to the home page, following any changes they decided
+to make.
 
 ---
 
@@ -232,17 +271,145 @@ throughout the site as a visual aid for users.
 
 ---
 
+As part of the UX I mentioned that it would be good to progress this site further in future developments, by intoducing a chat functionality
+between the users. This could be in the form of a forum or perhaps in the same concept of some social platform such as Facebook. This could
+be a place where users are encouraged to converse on the subjects surrounding London life, tourist attractions, places to eat, places to see.
+In a business sense, the site could introduce advertising for London tourist attractions, perhaps provide links to relevant sites to book
+tickets. If enough users participate in using the site, a brand could be developed and merchandise could possibly be sold, so an introduction
+of a site shop could be an idea.
+
 ---
 
 ## 3. Technologies Used
 
 ---
 
+### Languages
+
+* HTML 5: 
+    * Used to create the main content of the website
+
+* CSS 3: 
+    * Used to create custom styles for the website
+
+* JavaScript: 
+    * To use JQuery
+
+* Python:
+    * To import and use Flask and various functions, including jinja templating.
+
+### Libraries and Frameworks
+
+* Materialize v1.0.0: 
+    * Used for CSS shortcuts such as; Navbar, Cards, Forms, etc.
+
+* JQuery:
+    * JQuery used for javascript functions as it is simple to use and reduces the amount of code needed. 
+    Used for the mobile sidenav, collapsable sections and the floating action button.
+
+* Flask:
+    * Used Flask as it is a useful library that has an extensive category of Python functions for use.
+
+* Google Fonts: 
+    * Used to change from default Fonts.
+
+* Font Awesome:
+    * USed to create icons as visual aid to users.
+
+### Tools
+
+* MongoDB:
+    * Used to create database that will store the data for the site in collections created.
+
+* GitHub:
+    * For version control of this repository using Git and source code management.
+
+* GitPod:
+    * Used as a platform environment for creating the code for the website.
+
+* Heroku:
+    * Used to host the website
+
+* Favicon
+    * Used to create the favicon for the website.
+
+* Google Images:
+    * For sourcing background image for website.
+
 ---
 
 ## 4. Testing
 
 ---
+
+### User Stories
+
+* As a user I want to be presented with a simple, enjoyable and easy to use site, that is also visually appealing.
+    * *This has been achieved by having the slang terms available to the user via the very first page, there is minimal
+    content to have to digest beforehand as well. The site only includes pages that are neccessary, which reduces it's
+    complexity to the user, allowing them to concentrate on the pages that are relevant to them. Humour has 'attempted'
+    to be injected into the site via the Flash messages, by including cockney rhyming slang into these messages. The
+    colour scheme is appropriate and clear for the user to see without clash.*
+* As a user I want to be able to navigate around the site with ease.
+    * *This has been achieved by having a navbar at the top of the page with links to pages only relevant to the user.
+    Floating action button has also been added on the home page that takes the user to the top of the page from whatever
+    point they are currently at.*
+* As a user I want to be able to easily find the slang term I am looking for, via a logical ordering system.
+    * * This has been achieved by including an alphabet from A-Z at the top of the page, users can click on a letter
+    of their choice and will be taken to said letter that slang terms begin with. The slang terms have also been ordered
+    alphabetically for users to easily find the term they are looking for.*
+* As a user I would like the option to add to the dictionary of slang terms.
+    * *This has been achieved by including an option for users to register an account with the site, they can then log in
+    and add a slang term with it's definition.*
+* As a user I want to have access to the slang terms/defintions i've created and have the option to edit/remove them.
+    * *This has been achieved by including an edit button next to all slang terms that the user who is logged in has created.
+    By clicking on the button, the user has the option to edit and even delete the entry if they wish.*
+* As a user I want to enjoy using the site enough to want to return.
+    * *This has been achieved by the website being more of a service to users, if a user happens to need to know the definition
+    of a slang term then they know they can return to the site. Hopefully the content, ease of use and injection of humour makes
+    enough of an impact for the users to want to return.*
+
+### Responsive Design
+
+Throughout the creation of this project, I have tested the responsiveness at each point of adding a new feature. I mostly achieved
+this by using Chrome Dev tools, once I implemented a feature I would then check how the site looked/worked on different screen sizes,
+if there was an issue I would fix it there and then before moving on. You can see examples of how the site looks on different screen
+sizes in the examples below:
+
+* For screens at 1440px click [here](https://photos.google.com/photo/AF1QipPYgeLtRtc-9oKcB0p9jpgbHRFge00axsWqeXWJ)
+* For screens at 1024px click [here](https://photos.google.com/photo/AF1QipPJIN5TR4jRCFKNkj5Xa_ki-V1P7GATUxvejIv4)
+* For screens at 768px click [here](https://photos.google.com/photo/AF1QipM3rzP18WSJpOhiYL6PHmsy29D8wc9O9hK1eIEC)
+* For screens at 425px click [here](https://photos.google.com/photo/AF1QipMBpLN754EPerH3aL-QRsL29SDEzVpGajqXmDMN)
+* For screens at 380px click [here](https://photos.google.com/photo/AF1QipPw0FpIhQiSGCdlrIdOpTKn-4q6Mh1NCM0_Dge0)
+* For screens at 320px click [here](https://photos.google.com/photo/AF1QipOt_ui5ZoRY352q49wkhL_T9ACH3-vZmnLxOYzM)
+
+I also tested my sites responsiveness on a two websites such as [Am I responsive?](http://ami.responsivedesign.is/#) Which I used to create
+my device mockup image also. The second site being [Responsive Design Checker](https://responsivedesignchecker.com/), which is where I 
+physically checked to see how this website looked and worked on a wide variety of devices including many Apple and Samsung devices.
+
+### Browser Compatability
+
+I used [Browserstack](https://www.browserstack.com/) to check how compatable this site was on the major internet browsers including Chrome, 
+Edge, Mozilla, Opera, Safari and Internet Explorer. The site worked perfectly fine on all these browsers and their editions, I could not 
+find any faults when testing button, links, forms, mobile navbar, and the site appeared to run smoothly throughout all tests. 
+
+I also used Browserstack to see how well the site worked on
+different desktop, mobile and tablet devices. On the vast majority of devices the site worked perfectly well, however, I did spot a strange
+fault that only occured in iphones. The error is the background image does not stay fixed, so as you scroll down the page eventually the
+background image disappears, you can see the bug [here](https://photos.google.com/photo/AF1QipPtwbJIR6mFdE5NEBiYmbP2hWqD6SsH0qcdt1-h).
+I done some more tests to narrow down the root device/browser that might be the cause, upon further investigation, it appears that the
+only devices it affects are iphones and ipads (which is quite broad), and it doesn't matter what browser, the bug appears on both Chrome
+and Safari. I thought this must be all Apple products then, but when I tested on Mac devices, this bug wasn't there. As much as I don't
+like having this bug present, the only way I currently know how to resolve this is by using media queries and removing the CSS background-
+fixed property and then repeat the image. I have made the difficult decision not to do this, reason being, I believe there is
+probably a better way to resolve it without ruining the site for all other tablets/mobiles that the site works perfectly fine on. Once
+I figure out how to resolve this, then I will.
+
+
+
+### Online Validators
+
+
 
 ---
 
@@ -265,16 +432,6 @@ throughout the site as a visual aid for users.
 ### Code
 
 ### Acknowledgements
-
-
-5. I want the dictionary to be easily scaled, so an alphabet of href links that correspond to scrollspy's throughout the page. For example,
-clicking on 'A' will take the user to all the slang terms beginning with 'A', and so on. This will help the user as more often than
-not, they will be on the site knowing what the slang term it is they are looking for and can jump straight to the letter it begins with.
-6. The slang terms will be in alphabetical order as this makes the most sense for a dictionary, and again helps the user locate what they
-need. To separate the slang terms alphabetically, there will be a large letter heading at the beginning of each new set of words starting
-with the next letter of the alphabet. These letter headers are what are being targeted for the scrollspy links.
-
-
 
 
 Werkzeug Security helpers for user information
@@ -327,7 +484,7 @@ https://fonts.google.com/specimen/Delius?selection.family=Delius
 
 IMAGES
 
-Favicons
+Favicon
 
 https://favicon.io/emoji-favicons/input-latin-letters
 
@@ -335,10 +492,43 @@ Brick wall background
 
 https://images.unsplash.com/22/brick-wall.JPG?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb
 
-Yellow wall background
+Device mockup image
 
-https://unsplash.com/photos/9f3tCfHoGDE
+http://ami.responsivedesign.is/#
+
+Responsive Design Checker
+
+https://responsivedesignchecker.com/
+
+Browserstack to check how site works on different browsers/devices
+
+https://www.browserstack.com/
+
 
 Bug fixes
 
 When user added slang term and definition to the site/database, upon page reloading, the slang term had been created successfully but the definition was showing as 'None'. Upon investigation, there were no errors but there was a mistake in the app.py file under the app.route declaration. Instead of request.form.get("slang_definition) I had written, request.form.get("slang_description"). Was difficult to spot but I discovered it eventually.
+
+# H1 Heading
+## H2 Heading
+### H3 Heading
+#### H4 Heading
+
+---
+
+## Lists
+
+1. A list with Numbers
+2. A list with Numbers
+3. A list with Numbers
+
+* A list with bulletpoints
+* A list with bullet points
+* A list with bulletpoints
+
+---
+
+## Links and images
+
+[A link to github](https://github.com)
+![alt text here](icon.png)

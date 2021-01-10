@@ -4,7 +4,7 @@
 
 body {
     background-image: url("../images/brickwall-background.jpg");
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-attachment: fixed;
     font-family: 'Delius', cursive;
 }
@@ -34,6 +34,14 @@ body {
 
 /*------------------------------------Register/Login*/
 
+.login-form {
+    font-family: 'Delius', cursive;
+}
+
+.register-form {
+    font-family: 'Delius', cursive;
+}
+
 .register-button {
     background-color: white;
     color:#546e7a;
@@ -54,15 +62,21 @@ body {
     background-color: white;
     color:#546e7a;
     font-weight: bold;
+    font-family: 'Delius', cursive;
 }
 
 /*------------------------------------Edit_slang*/
+
+.edit-form {
+    font-family: 'Delius', cursive;  
+}
 
 .edit-button {
     background-color: white;
     color:#546e7a;
     font-weight: bold;
     margin-left: auto;
+    font-family: 'Delius', cursive;
 }
 
 .delete-button {
