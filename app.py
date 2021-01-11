@@ -21,6 +21,7 @@ mongo = PyMongo(app)
 Pulls slang from the words collection in database
 """
 
+
 @app.route("/")
 @app.route("/get_words")
 def get_words():

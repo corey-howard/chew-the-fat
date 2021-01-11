@@ -159,7 +159,7 @@ cockney_rhyming_slang.users:
 
 #### Wireframes
 
-You can find the pdf file to my Wireframes in the wireframe folder of this repository.
+You can find the pdf file to my Wireframes in the Wireframes folder of this repository.
 
 ---
 
@@ -322,13 +322,13 @@ of a site shop could be an idea.
     * Used to create database that will store the data for the site in collections created.
 
 * GitHub:
-    * For version control of this repository using Git and source code management.
+    * For hosting the website, version control of this repository using Git and source code management.
 
 * GitPod:
     * Used as a platform environment for creating the code for the website.
 
 * Heroku:
-    * Used to host the website
+    * Used to deploy the website
 
 * Favicon
     * Used to create the favicon for the website.
@@ -405,11 +405,33 @@ fixed property and then repeat the image. I have made the difficult decision not
 probably a better way to resolve it without ruining the site for all other tablets/mobiles that the site works perfectly fine on. Once
 I figure out how to resolve this, then I will.
 
+*__UPDATE: I managed to resolve the background image bug. This was achieved by loosely following the solution I outlined above, but Instead
+of removing the background-attachment: fixed; css styling in media queries, I just changed the background-repeat styling rule to repeat. I
+thought if the background image is fixed on the vast majority of devices then I don't have to worry about the image repeating as it will be
+fixed, but now the image will repeat on iphones and ipads, as the background-attachment: fixed styling rule does not work on these devices.__*
 
+### Bug Fixes
+
+When user added slang term and definition to the site/database, upon page reloading, the slang term had been created successfully but 
+the definition was showing as 'None'. 
+
+See code where bug was found [here](https://photos.google.com/search/_tra_/photo/AF1QipOV9v2UV1f9gGjXTTmPIrD1zi7fkJss4SQab77w)
+Image of bug on live site [here](https://photos.google.com/search/_tra_/photo/AF1QipNZBpRea9erDs8FKK4yk3lDMHdfa525Yg1Td5OR)
+
+Upon investigation, there were no errors but there was a mistake in the app.py file under the app.route declaration. Instead of 
+request.form.get("slang_definition) I had written, request.form.get("slang_description"). Was difficult to spot but I discovered it eventually.
 
 ### Online Validators
 
-
+* To test my HTML code for errors I used the [Nu HTML Checker](https://validator.w3.org/nu/).
+    * The test returned many errors, but were all for duplicate ID's which I believe is caused by the looping over by Jinja, unsure how to
+    resolve this.
+* To test my CSS code for errors I used the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/).
+    * The test returned no errors, but did however return many warnings, all for Materialize as it appears unknown to this validator tool.
+* To test my JavaScript code for errors I used the [JS Hint](https://jshint.com/).
+    * The test returned no errors or warnings.
+* To test my Python code for errors I used the [PEP 8 Online validator](http://pep8online.com)
+    * The test returned no errors or warnings.
 
 ---
 
@@ -419,6 +441,8 @@ I figure out how to resolve this, then I will.
 
 ### How to run this project locally
 
+
+
 ---
 
 ## 6. Credits
@@ -427,20 +451,49 @@ I figure out how to resolve this, then I will.
 
 ### Content
 
+This project inlcudes some concepts from the Code Institute tutorial for the flask task manager mini project. When I was completing that
+tutorial I had already looked ahead to what the requirements were for this MS3 project and made extensive notes whilst completing the
+tutorial. It was also my first time using Materialize, which I grew very fond of using, due to it's ease of use and sleek look, which
+swayed me to use instead of Bootstrap.
+
+For the login/creating user and profile sections of this project I did require help in achieving this by refering to the tutorial video
+as I could not think of another way of achieving this.
+
+Cockney rhyming slang terms
+
+https://happy2movelondon.co.uk/complete-dictionary-of-cockney-rhyming-slang/
+
 ### Media
 
-### Code
+Responsive Design Checker
 
-### Acknowledgements
+https://responsivedesignchecker.com/
 
+Browserstack to check how site works on different browsers/devices
 
-Werkzeug Security helpers for user information
+https://www.browserstack.com/
 
-https://werkzeug.palletsprojects.com/en/1.0.x/utils/#module-werkzeug.security
+Font Awesome Icons
 
-Flask cheat sheet and secondary password
+https://fontawesome.com/
 
-https://prettyprinted.com
+Font
+
+https://fonts.google.com/specimen/Delius?selection.family=Delius
+
+Favicon
+
+https://favicon.io/emoji-favicons/input-latin-letters
+
+Brick wall background
+
+https://images.unsplash.com/22/brick-wall.JPG?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb
+
+Device mockup image
+
+http://ami.responsivedesign.is/#
+
+### Research Tools/Help Guides
 
 hashlib 
 
@@ -449,10 +502,6 @@ https://docs.python.org/3/library/hashlib.html
 To learn how to sort data alphabetically
 
 https://www.w3schools.com/python/python_mongodb_sort.asp
-
-Cockney rhyming slang
-
-https://happy2movelondon.co.uk/complete-dictionary-of-cockney-rhyming-slang/
 
 For help with jinja templating
 
@@ -474,61 +523,15 @@ PEP 8 compliance
 
 https://www.python.org/dev/peps/pep-0008/
 
-Font Awesome Icons
+Werkzeug Security helpers for user information
 
-https://fontawesome.com/
+https://werkzeug.palletsprojects.com/en/1.0.x/utils/#module-werkzeug.security
 
-Font
+Flask cheat sheet and secondary password, image found [here](https://photos.google.com/search/_tra_/photo/AF1QipNIys-IIfRv1qh9-Oxx_83iwn1PhO6GoM7KbW6T)
 
-https://fonts.google.com/specimen/Delius?selection.family=Delius
+https://prettyprinted.com
 
-IMAGES
-
-Favicon
-
-https://favicon.io/emoji-favicons/input-latin-letters
-
-Brick wall background
-
-https://images.unsplash.com/22/brick-wall.JPG?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb
-
-Device mockup image
-
-http://ami.responsivedesign.is/#
-
-Responsive Design Checker
-
-https://responsivedesignchecker.com/
-
-Browserstack to check how site works on different browsers/devices
-
-https://www.browserstack.com/
+### Acknowledgements
 
 
-Bug fixes
 
-When user added slang term and definition to the site/database, upon page reloading, the slang term had been created successfully but the definition was showing as 'None'. Upon investigation, there were no errors but there was a mistake in the app.py file under the app.route declaration. Instead of request.form.get("slang_definition) I had written, request.form.get("slang_description"). Was difficult to spot but I discovered it eventually.
-
-# H1 Heading
-## H2 Heading
-### H3 Heading
-#### H4 Heading
-
----
-
-## Lists
-
-1. A list with Numbers
-2. A list with Numbers
-3. A list with Numbers
-
-* A list with bulletpoints
-* A list with bullet points
-* A list with bulletpoints
-
----
-
-## Links and images
-
-[A link to github](https://github.com)
-![alt text here](icon.png)
