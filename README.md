@@ -184,8 +184,6 @@ so I chose the background colour of these to be yellow accent-4 with white font.
 The site only has one image which is the background image, apart from that I have also used [font awesome](https://fontawesome.com/) icons
 throughout the site as a visual aid for users.
 
----
-
 ## 2. Features
 
 ---
@@ -278,11 +276,7 @@ In a business sense, the site could introduce advertising for London tourist att
 tickets. If enough users participate in using the site, a brand could be developed and merchandise could possibly be sold, so an introduction
 of a site shop could be an idea.
 
----
-
 ## 3. Technologies Used
-
----
 
 ### Languages
 
@@ -336,11 +330,7 @@ of a site shop could be an idea.
 * Google Images:
     * For sourcing background image for website.
 
----
-
 ## 4. Testing
-
----
 
 ### User Stories
 
@@ -355,7 +345,7 @@ of a site shop could be an idea.
     Floating action button has also been added on the home page that takes the user to the top of the page from whatever
     point they are currently at.*
 * As a user I want to be able to easily find the slang term I am looking for, via a logical ordering system.
-    * * This has been achieved by including an alphabet from A-Z at the top of the page, users can click on a letter
+    * *This has been achieved by including an alphabet from A-Z at the top of the page, users can click on a letter
     of their choice and will be taken to said letter that slang terms begin with. The slang terms have also been ordered
     alphabetically for users to easily find the term they are looking for.*
 * As a user I would like the option to add to the dictionary of slang terms.
@@ -433,21 +423,13 @@ request.form.get("slang_definition) I had written, request.form.get("slang_descr
 * To test my Python code for errors I used the [PEP 8 Online validator](http://pep8online.com)
     * The test returned no errors or warnings.
 
----
-
 ## 5. Deployment
-
----
 
 ### How to run this project locally
 
 
 
----
-
 ## 6. Credits
-
----
 
 ### Content
 
