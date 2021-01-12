@@ -54,13 +54,13 @@ use in our day to day conversations, not knowing that it is derived from Cockney
 The purpose of this site is to create a dictionary of rhyming slang terms and their definitions, potential users may have heard 
 a term that they are not familiar with and can find it on this site. Users are encouraged to make accounts and add terms/definitions 
 to the site to expand on the ever-growing database. The site should be simplistic and have the information that the user is searching
-for straight in front of them on the first page. There should also be minimal content to read from the start of the start, as the user
+for straight in front of them on the first page. There should also be minimal content to read from the start, as the user
 has come to this site for a quick answer to a question and are not there to read a backstory to the site's existence.
 
 As the site owner, going forward, it would be great to turn it into more of a platform for socialising. Perhaps adding a forum/chat
 funtionality. It could become a place for users to converse about London life, share experiences and of course continue to expand on
 the Cockney Rhyming Slang dictionary. These actions can be implemented along side the main focus of the website being a dictionary, to
-perhaps bring in revenuse by eventually advertising tourist attractions and forwarding users to ticket sales for these attractions as
+perhaps bring in revenue by eventually advertising tourist attractions and forwarding users to ticket sales for these attractions as
 an example.
 
 #### User Stories
@@ -119,7 +119,7 @@ via the wireframes. However, the basic structure logistically can be described i
 2. The first page should be designed in such a way that makes it clear what it is straightaway.
 3. The logo and navigation bar will be present at the very top of the page horizontally, logo central, navigation buttons to the right
 with the most commonly used buttons/pages displayed left to right.
-4. As the name of the site isn't inherently clear as to what the site does, the heading will displayed directly below the top nav-wrapper.
+4. As the name of the site isn't inherently clear as to what the site does, the heading will be displayed directly below the top nav-wrapper.
 5. An alphabet that includes href links for users to navigate to slang terms beginning with the letter they choose will be displayed
 next, before the dictionary begins.
 6. The dictionary will then be displayed, with all terms separated by large headers of the corresponding starting letter to the term.
@@ -417,6 +417,9 @@ request.form.get("slang_definition) I had written, request.form.get("slang_descr
     * The test returned many errors, but were all for duplicate ID's which I believe is caused by the looping over by Jinja. The ID's it
     seems, are within the jinja loop, I can't think of a solution around this so will note that it is an issue here currently, but will
     continue to actively try and resolve. Perhaps changing the ID's to class rules instead.
+    UPDATE 12/01/21: It looked like changing the ID's into class rules is a solution that will work, however there is currently a GitPod
+    issue, where code is not updating to the local preview so I am unable to see if the changes i'm making work. As the project submission
+    date for this project is 13/01/21, I don't want to run the risk of breaking this project over a bug at this moment in time.
 * To test my CSS code for errors I used the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/).
     * The test returned no errors, but did however return many warnings, all for Materialize as it appears unknown to this validator tool.
 * To test my JavaScript code for errors I used the [JS Hint](https://jshint.com/).
@@ -556,5 +559,14 @@ https://prettyprinted.com
 
 ### Acknowledgements
 
+I would like to thank the Code Institute and their team of content Tutors, Support Tutors and Student Care Team for all their help and
+support during/before this project. It is by their teaching and guidance that I am fulfilling a passion to learn web development.
 
+Special mention to my mentor Gerald McBride, for his sage wisdom and undoubted encouragement. Thank you for your guidance throughout
+this project and being available for support when I need it.
+
+A big thank you again to Stuart Crang from Learning People, for helping me start this journey and for the useful information/
+advice you share on LinkedIn.
+
+Lastly, to my peers on Slack and LinkedIn, thank you for troubleshooting tips, coding advice and for bouncing ideas off each other.
 
