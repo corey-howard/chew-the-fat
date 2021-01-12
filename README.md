@@ -414,8 +414,9 @@ request.form.get("slang_definition) I had written, request.form.get("slang_descr
 ### Online Validators
 
 * To test my HTML code for errors I used the [Nu HTML Checker](https://validator.w3.org/nu/).
-    * The test returned many errors, but were all for duplicate ID's which I believe is caused by the looping over by Jinja, unsure how to
-    resolve this.
+    * The test returned many errors, but were all for duplicate ID's which I believe is caused by the looping over by Jinja. The ID's it
+    seems, are within the jinja loop, I can't think of a solution around this so will note that it is an issue here currently, but will
+    continue to actively try and resolve. Perhaps changing the ID's to class rules instead.
 * To test my CSS code for errors I used the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/).
     * The test returned no errors, but did however return many warnings, all for Materialize as it appears unknown to this validator tool.
 * To test my JavaScript code for errors I used the [JS Hint](https://jshint.com/).
@@ -425,9 +426,49 @@ request.form.get("slang_definition) I had written, request.form.get("slang_descr
 
 ## 5. Deployment
 
+This project was developed using Gitpod, committed to Git and pushed to GitHub for hosting, and deployed by using Heroku.
+
 ### How to run this project locally
 
+To clone this project from GitHub:
 
+1. Follow the link which will take you to this projects [GitHub repository](https://github.com/corey-howard/chew-the-fat).
+2. Under the repository name in the 'Code' action button locate the clone HTTPS.
+3. Copy the clone URL for the repository which is https://github.com/corey-howard/chew-the-fat.git.
+4. In your local IDE open Git Bash.
+5. Change the current working directory to where you want the cloned directory to be created.
+6. Type, git-clone, and paste the URL for this repository.
+
+To download the code from GitHub:
+
+1. Follow the link which will take you to this projects [GitHub repository](https://github.com/corey-howard/chew-the-fat).
+2. Under the repository name in the 'Code' action button click on Download ZIP.
+3. Choose the directory you wish to download it to.
+4. Unzip the file and then it is available to use.
+
+To deploy this project to Heroku:
+
+These instructions are based upon using a Windows OS. Please consult your OS for python commands.
+You will also need to recreate the database in MongoDB.
+
+1. Firstly, create a requirements.txt file by using the terminal command pip freeze > requirements.txt
+2. Create a Procfile by using the terminal command echo web: python app.py > Procfile
+3. Git add and git commit the new requirements.txt and Procfile then git push these to GitHub
+4. On the Heroku site, create a new app by pressing the 'New' button in your dashboard. Create a name for the project and select Europe.
+5. On the Heroku dashboard, on the newly created app, click on 'Deploy' > 'Deployment Method' and then select GitHub.
+6. Make sure the correct GitHub repository is linked to the Heroku app.
+7. On the Heroku app dashboard, click on 'Settings' and then 'Reveal Config Vars'
+8. Set the following config vars:
+
+Key | Value
+--- | ---
+|   IP             |   0.0.0.0                                                                                                       |
+|   MONGO_DB_NAME  |   cockney_rhyming_slang                                                                                         |
+|   MONGO_URI      |   mongodb+srv://root:r00tUser@myfirstcluster.9mrfl.mongodb.net/cockney_rhyming_slang?retryWrites=true&w=majority|                       |
+|   PORT           |   5000                                                                                                          |
+|   SECRET_KEY     |   < create your own >                                                                                           |
+
+9. On the dashboard under deploy, click on 'Deploy Branch'. Once this is completed you can open the app.
 
 ## 6. Credits
 
