@@ -404,12 +404,17 @@ fixed, but now the image will repeat on iphones and ipads, as the background-att
 
 When user added slang term and definition to the site/database, upon page reloading, the slang term had been created successfully but 
 the definition was showing as 'None'. 
-
 See code where bug was found [here](https://photos.google.com/search/_tra_/photo/AF1QipOV9v2UV1f9gGjXTTmPIrD1zi7fkJss4SQab77w)
 Image of bug on live site [here](https://photos.google.com/search/_tra_/photo/AF1QipNZBpRea9erDs8FKK4yk3lDMHdfa525Yg1Td5OR)
-
 Upon investigation, there were no errors but there was a mistake in the app.py file under the app.route declaration. Instead of 
 request.form.get("slang_definition) I had written, request.form.get("slang_description"). Was difficult to spot but I discovered it eventually.
+
+I realised last minute before submitting this project that my code was missing quite a key component. When users add a slang term, it would
+only appear on the site if it began with a capital letter, due to the jinja if statement only retrieving slang terms beginning with 'A', 'B',
+'C', etc. That has now been resolved. However, any slang terms added to the site starting with lowercase, is not sorted alphabetically. If
+I had more time I would be able to resolve this. I have attempted to resolve this by adding to the python code within the sort() function
+key=str.lower, which upon research should sort the words alphabetically regardless of the word starting with an uppercase or lowercase letter.
+Unfortunately, I could not get this to work in time before submission, so is left as a bug.
 
 ### Online Validators
 
